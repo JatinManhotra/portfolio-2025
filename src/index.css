@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: poppins;
+  src: url(assets/Poppins-Regular.ttf);
+}
+
+@theme {
+  --color-main-light: #111827;
+  --color-main-dark: #f1f5f9;
+
+  --color-subtext-light: #6b7280;
+  --color-subtext-dark: #cbd5e1;
+
+  --color-background-light: #f9fafb;
+  --color-background-dark: #191a1b;
+
+  --color-surface-dark: #1d2021;
+
+  --color-gold : #ffd22a;
+  --color-deep-gold : #fa8b2d
+}
+
+
+@utility background-color {
+  @apply bg-background-light text-main-light dark:bg-background-dark dark:text-main-dark;
+}
+
+@utility main-text-color {
+  @apply text-main-light dark:text-main-dark;
+}
+
+@utility subtext-color {
+  @apply text-subtext-light dark:text-subtext-dark;
+}
+
+@utility light-btn{
+  @apply bg-main-dark text-main-light
+}
+
+@utility gold-btn{
+ @apply bg-gold text-main-light
+}
+
+
+@layer components{
+  .li-hover{
+    @apply cursor-pointer hover:text-gold transition-all duration-100 ease-in
+  }
+  .custom-btn{
+    @apply shadow-md shadow-black/50 px-5 py-2 cursor-pointer rounded-lg flex items-center gap-2 scale-100 hover:scale-[1.02]
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: poppins, "Times New Roman", Times, serif, "Segoe UI", Tahoma,
+    Geneva, Verdana, sans-serif;
+  transition: all 0.2s ease-in;
+}
+
+body {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden;
+}
+
+.name-tag{
+  font-family: cursive;
+}
+
+.li-underline {
+  position: relative;
+}
+
+.li-underline::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: .1563rem;
+  background-color: #ffd22a;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.li-underline:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.custom-caret::before{
+  content: "";
+  top: 50%;
+  right: -0.5rem;
+  transform: translateY(-45%);
+  position: absolute;
+  height: 2.1875rem;
+  width: .125rem;
+  background-color: #fa8b2d;
+  animation: blink .7s infinite;
+}
+
+.custom-caret.stop-blinking::before{
+  animation: none;
+}
+
+@keyframes blink{
+  50%{
+    opacity: 0;
+  }
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fade-slide {
+  animation: fadeSlide 0.5s ease-in-out;
+}
+
+.icon-text-slide{
+  transition: all .3s ease-in !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
+
+ .confetti {
+    position: fixed;
+    width: .125rem;
+    height: .125rem;
+    border-radius: 100%;
+    animation: 700ms fall ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  @keyframes fall {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+  }
