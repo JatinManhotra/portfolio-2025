@@ -104,7 +104,7 @@ const Home = () => {
       <div className="mt-10 flex items-center gap-6"> 
 
         <a>
-          <button className="light-btn group custom-btn">
+          <button className="light-btn text-main-light group custom-btn">
           <GrGithub className="text-xl"/> My Github Profile
           <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>

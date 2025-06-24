@@ -27,7 +27,7 @@ const Socials = () => {
 
           </div>
 
-          <div className="h-20 w-1 bg-gold"></div>
+          <div className="h-20 w-1 gold-gradient"></div>
 
       </aside>
   )

@@ -1,11 +1,11 @@
 const IconBox = ({icon, color, text}) => {
   return (
-    <div className="group">
+    <div className="group relative">
   <div
    style={{
   filter: `drop-shadow(0 0 6px ${color})`
 }}
-  className="w-24 h-24 flex items-center justify-center rounded-full bg-surface-dark">
+  className="w-24 h-24 flex items-center justify-center rounded-full soft-bg-gradient dark:bg-surface-dark">
     <img
       src={icon}
       alt="icon svg"
@@ -13,7 +13,7 @@ const IconBox = ({icon, color, text}) => {
     />
   </div>
 
-  <p className="text-center main-text-color transition-all duration-300 transform group-hover:translate-y-2 group-hover:opacity-100 -translate-y-2 opacity-0">
+  <p className="absolute whitespace-nowrap left-[50%] translate-x-[-50%] main-text-color transition-all duration-300 transform group-hover:translate-y-2 group-hover:opacity-100 -translate-y-2 opacity-0">
     {text}
   </p>
 </div>

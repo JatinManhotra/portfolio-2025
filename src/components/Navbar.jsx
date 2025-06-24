@@ -8,7 +8,7 @@ const Navbar = () => {
   const { dark, setDark } = useContext(MyContext);
 
   return (
-    <section className="flex z-10 items-center justify-between mx-6  h-20 ">
+    <section className="flex z-10 fixed top-0 left-0 right-0 backdrop-blur-md dark:bg-surface-dark/30 items-center justify-between px-6  h-20 ">
 
       {/* left heading */}
       <h2 className="name-tag text-xl">{"<Jatin Manhotra/>"}</h2>

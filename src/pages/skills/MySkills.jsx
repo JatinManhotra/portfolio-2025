@@ -103,7 +103,7 @@ const MySkills = () => {
 
       <div className="grid grid-cols-2">
 
-        <div>
+        <div className="mb-5">
           <h2 className="text-deep-gold text-center text-xl my-5">Languages</h2>
           <div className="flex items-center gap-10 justify-center">
             {languages?.length > 0
@@ -119,7 +119,7 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div>
+        <div className="mb-5">
           <h2 className="text-deep-gold text-center text-xl my-5">Libraries</h2>
           <div className="flex items-center gap-10 justify-center">
             {libraries?.length > 0

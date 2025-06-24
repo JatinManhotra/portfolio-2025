@@ -11,7 +11,7 @@
   --color-main-light: #111827;
   --color-main-dark: #f1f5f9;
 
-  --color-subtext-light: #6b7280;
+  --color-subtext-light: #434447;
   --color-subtext-dark: #cbd5e1;
 
   --color-background-light: #f9fafb;
@@ -19,10 +19,27 @@
 
   --color-surface-dark: #1d2021;
 
-  --color-gold : #ffd22a;
-  --color-deep-gold : #fa8b2d
-}
+  --color-dark: #151515;
+  --color-light-gray: #dfdfdf;
 
+  --color-gold: #ffd22a;
+  --color-deep-gold: #fa8b2d;
+
+  --color-info: #3b82f6;
+  --color-info-dark: #60a5fa;
+
+  --color-success: #10b981;
+  --color-success-dark: #34d399;
+
+  --color-error: #ef4444;
+  --color-error-dark: #f87171;
+
+  --color-border-light: #e5e7eb;
+  --color-border-dark: #2b2d2f;
+
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+  --color-shadow-dark: rgba(0, 0, 0, 0.3);
+}
 
 @utility background-color {
   @apply bg-background-light text-main-light dark:bg-background-dark dark:text-main-dark;
@@ -36,29 +53,119 @@
   @apply text-subtext-light dark:text-subtext-dark;
 }
 
-@utility light-btn{
-  @apply bg-main-dark text-main-light
+@utility light-btn {
+  @apply soft-bg-gradient text-main-light;
 }
 
-@utility gold-btn{
- @apply bg-gold text-main-light
+@utility gold-btn {
+  @apply gold-gradient hover:glow-hover text-main-light;
 }
 
+@utility dark-color {
+  @apply dark:bg-dark subtext-color bg-light-gray ;
+}
 
-@layer components{
-  .li-hover{
-    @apply cursor-pointer hover:text-gold transition-all duration-100 ease-in
+@utility info-text {
+  @apply text-info dark:text-info-dark;
+}
+
+@utility success-bg {
+  @apply bg-success dark:bg-success-dark text-white;
+}
+
+@utility error-bg {
+  @apply bg-error dark:bg-error-dark text-white;
+}
+
+@utility error-text {
+  @apply text-error dark:text-error-dark;
+}
+
+@utility card-border {
+  @apply border-border-light dark:border-border-dark border-2;
+}
+
+@utility card-shadow {
+  box-shadow: 0 2px 6px var(--color-shadow-light);
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 6px var(--color-shadow-dark);
   }
-  .custom-btn{
-    @apply shadow-md shadow-black/50 px-5 py-2 cursor-pointer rounded-lg flex items-center gap-2 scale-100 hover:scale-[1.02]
+}
+
+/* Use for: section backgrounds, headers, or card containers. */
+@utility soft-bg-gradient {
+  background: linear-gradient(to bottom right, #f9fafb, #e5e7eb);
+}
+
+@utility dark-bg-gradient {
+  @apply dark:from-surface-dark dark:bg-gradient-to-br dark:to-[#141414];
+}
+
+@utility gold-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-gold),
+    var(--color-deep-gold)
+  );
+}
+
+/* For Buttons or Icons on Hover */
+/* Apply this to buttons, icons, or even city cards to give an interactive feel. */
+@utility glow-hover {
+  box-shadow: 0 0 4px var(--color-gold);
+}
+
+@utility alert-info {
+  @apply bg-info/10 text-info border-info rounded border-l-4 px-4 py-2;
+}
+
+@utility alert-success {
+  @apply bg-success/10 text-success border-success rounded border-l-4 px-4 py-2;
+}
+
+@utility alert-error {
+  @apply bg-error/10 text-error border-error rounded border-l-4 px-4 py-2;
+}
+
+@layer components {
+  .li-hover {
+    @apply hover:text-deep-gold dark:hover:text-gold cursor-pointer transition-all duration-100 ease-in;
+  }
+  .custom-btn {
+    @apply card-shadow flex scale-100 cursor-pointer items-center gap-2 rounded-lg px-5 py-2 hover:scale-[1.02];
+  }
+  .form-input {
+    @apply card-border w-full rounded-lg px-4 py-2 text-sm caret-black outline-none placeholder:text-base placeholder:text-gray-600 sm:text-base dark:caret-white dark:placeholder:text-gray-400;
+  }
+}
+
+/* styles to make the autofill content respective to the theme */
+@layer utilities {
+  /* Light mode autofill */
+  input:-webkit-autofill {
+    -webkit-text-fill-color: #111827 !important;
+    transition: background-color 9999s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0px 1000px #f9fafb inset; /* match light bg */
+  }
+
+  /* Dark mode autofill */
+  .dark input:-webkit-autofill {
+    -webkit-text-fill-color: #f1f5f9 !important;
+    transition: background-color 9999s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0px 1000px #191a1b inset; /* match dark bg (like bg-gray-800) */
   }
 }
 
 * {
   box-sizing: border-box;
-  font-family: poppins, "Times New Roman", Times, serif, "Segoe UI", Tahoma,
-    Geneva, Verdana, sans-serif;
+  font-family:
+    poppins, "Times New Roman", Times, serif, "Segoe UI", Tahoma, Geneva,
+    Verdana, sans-serif;
   transition: all 0.2s ease-in;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -67,7 +174,7 @@ body {
   overflow-x: hidden;
 }
 
-.name-tag{
+.name-tag {
   font-family: cursive;
 }
 
@@ -76,12 +183,12 @@ body {
 }
 
 .li-underline::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: .1563rem;
+  height: 0.1563rem;
   background-color: #ffd22a;
   transform-origin: bottom right;
   transform: scaleX(0);
@@ -93,24 +200,24 @@ body {
   transform: scaleX(1);
 }
 
-.custom-caret::before{
+.custom-caret::before {
   content: "";
   top: 50%;
   right: -0.5rem;
   transform: translateY(-45%);
   position: absolute;
   height: 2.1875rem;
-  width: .125rem;
+  width: 0.125rem;
   background-color: #fa8b2d;
-  animation: blink .7s infinite;
+  animation: blink 0.7s infinite;
 }
 
-.custom-caret.stop-blinking::before{
+.custom-caret.stop-blinking::before {
   animation: none;
 }
 
-@keyframes blink{
-  50%{
+@keyframes blink {
+  50% {
     opacity: 0;
   }
 }
@@ -130,32 +237,91 @@ body {
   animation: fadeSlide 0.5s ease-in-out;
 }
 
-.icon-text-slide{
-  transition: all .3s ease-in !important;
+.icon-text-slide {
+  transition: all 0.3s ease-in !important;
 }
 
-.hide-scrollbar::-webkit-scrollbar{
+.msg-width {
+  transition: all 5s ease-in !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
+.confetti {
+  position: fixed;
+  width: 0.125rem;
+  height: 0.125rem;
+  border-radius: 100%;
+  animation: 700ms fall ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
 
- .confetti {
-    position: fixed;
-    width: .125rem;
-    height: .125rem;
-    border-radius: 100%;
-    animation: 700ms fall ease-in-out;
+@keyframes fall {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
     opacity: 0;
-    pointer-events: none;
-    z-index: 9999;
   }
+}
 
-  @keyframes fall {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100px);
-      opacity: 0;
-    }
+@keyframes animate-left {
+  from {
+    transform: translateX(25%);
+    opacity: 0;
   }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-left {
+  animation: animate-left 1s normal;
+}
+
+@keyframes animate-right {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-right {
+  animation: animate-right 1s normal;
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.scale-up {
+  animation: scale-up 0.2s normal;
+}
+
+@keyframes animate-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-opacity {
+  animation: animate-opacity 0.2s normal;
+}

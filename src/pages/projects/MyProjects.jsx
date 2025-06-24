@@ -70,16 +70,16 @@ const MyProjects = () => {
   }, []);
 
   return (
-    <section className="mt-20 pb-20">
+    <section className="mt-40">
       <h1 className="text-4xl text-center font-bold">
         My <span className="text-gold">Projects</span>
       </h1>
 
-      <h3 className="text-center subtext-color text-lg mt-6 mb-20">
+      <h3 className="text-center subtext-color text-lg mt-6 mb-10">
         Below are some of my projects. You can find all of them on my{" "}
         <a
           target="_blank"
-          className="font-bold cursor-pointer text-white "
+          className="font-bold cursor-pointer text-black dark:text-white "
           href="https://github.com/JatinManhotra"
         >
           Github
@@ -97,7 +97,7 @@ const MyProjects = () => {
 
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto hide-scrollbar max-w-[85%] w-full snap-x snap-mandatory scroll-smooth"
+          className="flex overflow-x-auto py-3 hide-scrollbar max-w-[85%] w-full snap-x snap-mandatory scroll-smooth"
         >
           {groupedProjects.map((group, index) => (
             <div
