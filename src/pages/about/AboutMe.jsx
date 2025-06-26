@@ -2,12 +2,12 @@ import aboutMe from "../../assets/aboutMe.svg";
 
 const AboutMe = () => {
   return (
-    <section id="about" className="mt-40">
-      <h2 data-aos="fade-up" className="text-center text-4xl font-bold">
+    <section id="about" className="mt-20 sm:mt-40">
+      <h2 data-aos="fade-up" className="text-center text-3xl sm:text-4xl font-bold">
         About <span className="gold-text li-underline">Me</span>
       </h2>
 
-      <div className="mt-10 flex items-center justify-between px-10">
+      <div className="mt-10 flex items-center flex-wrap overflow-x-hidden justify-between sm:px-10">
         <img
           data-aos="zoom-in"
           className="w-[30rem]"
@@ -15,8 +15,8 @@ const AboutMe = () => {
           alt="About me illustration"
         />
 
-        <div className="basis-[60%] text-justify subtext-color text-lg">
-          <h3 data-aos="fade-left" data-aos-delay="100" className="orange-text mb-6 text-2xl">A bit about me</h3>
+        <div className="sm:basis-[60%] text-justify subtext-color mt-10 sm:mt-0 sm:text-lg">
+          <h3 data-aos="fade-left" data-aos-delay="100" className="orange-text mb-6 text-xl sm:text-2xl">A bit about me</h3>
 
           <p
             data-aos="fade-left" data-aos-offset="250" 

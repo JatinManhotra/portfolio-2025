@@ -9,7 +9,7 @@ const TechApiIdeas = ({project}) => {
   return (
     <>
       <div className="my-20">
-        <h2 className="mb-2 flex items-center gap-4 text-2xl font-semibold">
+        <h2 className="mb-2 flex items-center gap-4 text-xl sm:text-2xl font-semibold">
           <FaCode className=" gold-text " /> Technologies and Libraries Used
         </h2>
 
@@ -21,11 +21,11 @@ const TechApiIdeas = ({project}) => {
       </div>
 
       { project.api_used?.length > 0 && <div className="my-20">
-        <h2 className="mb-2 flex items-center gap-4 text-2xl font-semibold">
+        <h2 className="mb-2 flex items-center gap-4 text-xl sm:text-2xl font-semibold">
           <TbApi className=" gold-text  text-3xl" /> API Used
         </h2>
 
-        <ul className="my-4 text-lg">
+        <ul className="my-4 text-sm sm:text-lg">
           {project.api_used.map((api, index) => (
             <li key={index} className="subtext-color marker:gold-text  my-2 ml-6 list-disc">
               <a target="_blank" className="font-bold text-black dark:text-white" href={api.link}>
@@ -38,12 +38,12 @@ const TechApiIdeas = ({project}) => {
       </div>}
 
       <div className="my-20">
-        <h2 className="mb-4 flex items-center gap-4 text-2xl font-semibold">
+        <h2 className="mb-4 flex items-center gap-4 text-xl sm:text-2xl font-semibold">
           <HiOutlineLightBulb className=" gold-text  text-3xl" /> What's Next /
           Future Ideas
         </h2>
 
-        <ul className="text-lg">
+        <ul className="text-sm sm:text-lg">
           {project.future_ideas.map((idea, index) => (
             <li
               key={index}

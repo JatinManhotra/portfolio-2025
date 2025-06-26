@@ -61,22 +61,22 @@ const Clock = () => {
       <div
       title="Show clock"
         onClick={() => setShowClock(true)}
-        className={`${!showClock ? "scale-100" : "scale-0"} gold-btn fixed right-10 bottom-2 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full`}
+        className={`${!showClock ? "scale-100" : "scale-0"} gold-btn fixed right-2 sm:right-10 bottom-2 flex h-12 w-12 cursor-pointer items-center justify-center rounded-full`}
       >
         <FaRegClock className="text-3xl" />
       </div>
 
       <div
-        className={` ${showClock ? "scale-100" : "scale-0"} gold-gradient card-shadow text-main-light fixed right-10 bottom-2 flex w-75 origin-bottom-right items-center gap-4 rounded-lg px-6 py-3`}
+        className={` ${showClock ? "scale-100" : "scale-0"} gold-gradient card-shadow text-main-light fixed right-2 sm:right-10 bottom-2 flex w-65 sm:w-75 origin-bottom-right items-center gap-4 rounded-lg px-6 py-2 sm:py-3`}
       >
-        <div className="text-3xl">
-          <div className="text-sm text-main-light">{fullDate}</div>
+        <div className="text-2xl sm:text-3xl">
+          <div className="text-xs sm:text-sm text-main-light">{fullDate}</div>
           <span>{hours}</span>
           <span>:</span>
           <span>{minutes}</span>
           <span>:</span>
           <span>{seconds}</span>
-          <span className="text-lg font-semibold">{daytime}</span>
+          <span className="text-base sm:text-lg font-semibold">{daytime}</span>
         </div>
 
         <FaWindowMinimize

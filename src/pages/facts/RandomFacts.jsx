@@ -6,9 +6,9 @@ const RandomFacts = () => {
     const {fact, factLoading,fetchFacts} = useContext(MyContext)
 
   return (
-    <section className=' py-10 min-h-[20rem]'>
-        <h1 data-aos="fade-up"  className='italic text-center font-bold text-4xl'>"Check out this <span className='gold-text li-underline'>fact!</span>"</h1>
-        <p data-aos="flip-up"  className='mt-20 text-4xl max-w-[80%] mx-auto italic text-center'>
+    <section className='mt-20 sm:mt-0 py-10 min-h-[20rem]'>
+        <h1 data-aos="fade-up"  className='italic text-center font-bold text-2xl sm:text-4xl'>"Check out this <span className='gold-text li-underline'>fact!</span>"</h1>
+        <p data-aos="flip-up"  className='mt-20 text-xl sm:text-4xl max-w-[80%] mx-auto italic text-center'>
             {
                 factLoading ? "A fact is on the way!" : `"${fact}"`
             }

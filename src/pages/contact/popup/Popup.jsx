@@ -34,12 +34,12 @@ const Popup = ({ showPopup, setShowPopup, emailSendError }) => {
       <div onClick={() => setShowPopup(false)} className='animate-opacity bg-black/50 z-[99] fixed top-0 left-0 bottom-0 right-0' />
 
       {/* Popup Card */}
-      <div className={`scale-up relative flex flex-col items-center justify-center gap-10 w-80 h-80 rounded-lg card-shadow overflow-hidden card-border soft-bg-gradient dark:dark-bg-gradient z-[100]`}>
+      <div className={`scale-up relative flex flex-col items-center justify-center gap-10 w-60 h-60 sm:w-80 sm:h-80 rounded-lg card-shadow overflow-hidden card-border soft-bg-gradient dark:dark-bg-gradient z-[100]`}>
         <FaXmark onClick={() => setShowPopup(false)} className="absolute cursor-pointer text-2xl top-5 right-5" />
         
-        <img className="mx-auto w-30" src={emailSendError ? error : success} alt="Status icon" />
+        <img className="mx-auto w-20 sm:w-30" src={emailSendError ? error : success} alt="Status icon" />
 
-        <h2 className="text-lg text-center">
+        <h2 className="sm:text-lg text-center">
           {emailSendError ? "Failed to send email! Please try again." : "Email sent successfully!"}
         </h2>
 

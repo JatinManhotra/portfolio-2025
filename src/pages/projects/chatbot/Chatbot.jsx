@@ -32,7 +32,7 @@ const Chatbot = () => {
       <div
       title="Chat with Uta"
         onClick={handleToggle}
-        className="card-shadow fixed right-10 bottom-20 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#ec979e]"
+        className="card-shadow fixed right-2 sm:right-10 bottom-20 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#ec979e]"
       >
         {/* Image (Uta) */}
         <img
@@ -48,17 +48,17 @@ const Chatbot = () => {
       </div>
 
       <div
-        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed right-20 bottom-20 flex h-full max-h-140 w-100 origin-bottom-right flex-col justify-between rounded-lg`}
+        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed bottom-20 sm:right-20 sm:bottom-20 flex h-full max-h-140 w-90 sm:w-100 origin-bottom-right flex-col justify-between rounded-lg`}
       >
         {/* chatbot header */}
         <div className="flex items-center px-6 py-3 dark:border-b-0 border-b border-subtext-dark dark:bg-transparent bg-light-gray justify-between">
           <div className="flex items-center gap-4">
             <img
-              className="card-shadow h-12 w-12 rounded-full"
+              className="card-shadow h-10 w-10 sm:h-12 sm:w-12 rounded-full"
               src={uta_ai}
               alt="Uta AI"
             />
-            <h2 className="text-lg">Uta - Chatbot</h2>
+            <h2 className="sm:text-lg">Uta - Chatbot</h2>
           </div>
           <button aria-label="Collapse Chatbot">
             <IoIosArrowDown
@@ -69,7 +69,7 @@ const Chatbot = () => {
         </div>
 
         {/* chatbot body */}
-        <div className="hide-scrollbar h-full px-6 overflow-y-scroll">
+        <div className="hide-scrollbar h-full px-4 sm:px-6 overflow-y-scroll">
           {/* ai msg */}
           <div className="item-center mt-4 flex gap-4">
             <img
@@ -77,7 +77,7 @@ const Chatbot = () => {
               src={uta_ai}
               alt="Uta AI"
             />
-            <p className="card-shadow text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
+            <p className="card-shadow text-sm sm:text-base text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
               Hi👋🏼, I'm Uta. Nice to meet you!
             </p>
           </div>
@@ -96,14 +96,14 @@ const Chatbot = () => {
             src={uta_ai}
             alt="Uta AI"
           />
-          <p className=" card-shadow text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
+          <p className=" card-shadow text-sm sm:text-base text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
             Uta is thinking...
           </p>
         </div>
     }
 
     {
-        errorMsg && <div className="border-1 mt-4 max-w-[90%] border-error-dark text-error-dark px-3 py-2 rounded-lg">
+        errorMsg && <div className="border-1 mt-4 text-sm sm:text-base max-w-[90%] border-error-dark text-error-dark px-3 py-2 rounded-lg">
             An error occurred! Please refresh the page.
         </div>
     }

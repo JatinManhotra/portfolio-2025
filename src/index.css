@@ -144,10 +144,13 @@
     @apply hover:gold-text cursor-pointer transition-all duration-100 ease-in;
   }
   .custom-btn {
-    @apply card-shadow flex scale-100 cursor-pointer items-center gap-2 rounded-lg px-5 py-2 hover:scale-[1.02];
+    @apply card-shadow flex text-sm sm:text-base whitespace-nowrap scale-100 cursor-pointer items-center gap-2 rounded-lg px-5 py-2 hover:scale-[1.02];
   }
   .form-input {
-    @apply card-border w-full rounded-lg px-4 py-2 text-sm caret-black outline-none placeholder:text-base placeholder:text-gray-600 sm:text-base dark:caret-white dark:placeholder:text-gray-400;
+    @apply card-border w-full rounded-lg px-4 py-2 text-sm caret-black outline-none sm:placeholder:text-base placeholder:text-gray-600 sm:text-base dark:caret-white dark:placeholder:text-gray-400;
+  }
+  .sm-menu-item{
+    @apply w-full flex items-center cursor-pointer gap-4 px-2 py-1 bg-light-gray dark:bg-surface-dark card-shadow card-border rounded-lg 
   }
 }
 
@@ -187,9 +190,9 @@ html.dark ::selection {
   transition: all 0.2s ease-in;
 }
 
-html::-webkit-scrollbar {
+/* html::-webkit-scrollbar {
   display: none;
-}
+} */
 
 body {
   height: 100dvh;
@@ -234,6 +237,16 @@ html.dark .li-underline::before {
   text-underline-offset: .25rem;
 }
 
+.sm-active{
+  border-bottom: 2px solid var(--color-deep-gold);
+  color: var(--color-deep-gold);
+}
+
+html.dark .sm-active{
+  border-bottom: 2px solid var(--color-gold);
+  color: var(--color-gold);
+}
+
 html.dark .active{
   color: var(--color-gold);
 }
@@ -248,6 +261,11 @@ html.dark .active{
   width: 0.125rem;
   background-color: #fa8b2d;
   animation: blink 0.7s infinite;
+}
+
+.mobile.custom-caret::before {
+  height: 1.5625rem;
+  top: .9375rem;
 }
 
 .custom-caret.stop-blinking::before {

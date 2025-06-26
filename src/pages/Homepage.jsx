@@ -70,12 +70,12 @@ const Homepage = () => {
         <section className="w-full">
           <div className="bg-subtext-light dark:bg-subtext-dark mx-auto mb-6 h-0.5 w-[85%]" />
 
-          <div className="subtext-color flex items-center justify-center">
+          <div className="subtext-color flex text-sm sm:text-base items-center gap-1 sm:gap-0  flex-col sm:flex-row justify-center">
             <span className="mr-4">© 2025 - All Rights Reserved.</span>
 
-            <span> | </span>
+            <span className="hidden sm:block"> | </span>
 
-            <span className="ml-4 flex items-center gap-2">
+            <span className="sm:ml-4 flex items-center gap-2">
               Made with <FaHeart className="text-rose-500" /> by{" "}
               <a
                 className="hover:font-bold dark:hover:text-white"

@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { IoIosSend } from "react-icons/io";
 
-const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError}) => {
-
+const ContactForm = ({
+  showPopup,
+  setShowPopup,
+  emailSendError,
+  setEmailSendError,
+}) => {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState({
     msg: "",
@@ -28,7 +32,6 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
     msg: "",
     error: false,
   });
-
 
   const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -136,22 +139,40 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
     // ✅ SEND EMAIL
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-      .then(() => {    
+      .then(() => {
         setName("");
         setEmail("");
         setMessage("");
+        setMessageError({
+          msg: "",
+          error: false,
+          touched: false,
+        });
+        setNameError({
+          msg: "",
+          error: false,
+          touched: false,
+        });
+        setEmailError({
+          msg: "",
+          error: false,
+          touched: false,
+        });
         setShowPopup(true);
-        setEmailSendError(false)
+        setEmailSendError(false);
       })
       .catch((error) => {
         console.error("Email error:", error);
         setEmailSendError(true);
-        setShowPopup(true)
+        setShowPopup(true);
       });
   }
 
   return (
-    <form onSubmit={(event) => validateForm(event)} className="w-full flex-1 px-3 xl:px-8">
+    <form
+      onSubmit={(event) => validateForm(event)}
+      className="w-full flex-1 px-3 xl:px-8"
+    >
       <div>
         <label
           htmlFor="name"
@@ -178,7 +199,7 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
         />
 
         <span
-          className={`text-sm ${
+          className={`text-xs sm:text-sm ${
             nameError.touched
               ? nameError.error
                 ? "text-red-600 dark:text-red-400"
@@ -193,7 +214,7 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
       <div>
         <label
           htmlFor="email"
-          className="mb-2 mt-1 block text-xs font-medium text-black xl:text-sm dark:text-white"
+          className="mt-1 mb-2 block text-xs font-medium text-black xl:text-sm dark:text-white"
         >
           Email
         </label>
@@ -216,7 +237,7 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
         />
 
         <span
-          className={`text-sm ${
+          className={`text-xs sm:text-sm ${
             emailError.touched
               ? emailError.error
                 ? "text-red-600 dark:text-red-400"
@@ -231,7 +252,7 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
       <div>
         <label
           htmlFor="message"
-          className="mb-2 mt-1 block text-xs font-medium text-black xl:text-sm dark:text-white"
+          className="mt-1 mb-2 block text-xs font-medium text-black xl:text-sm dark:text-white"
         >
           Message
         </label>
@@ -245,7 +266,7 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyUp={validateMessage}
-            className={`form-input resize-none hide-scrollbar ${
+            className={`form-input hide-scrollbar resize-none ${
               messageError.touched
                 ? messageError.error
                   ? "border-red-500"
@@ -256,7 +277,7 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
           />
         </div>
         <span
-          className={`text-sm ${
+          className={`text-xs sm:text-sm ${
             messageError.touched
               ? messageError.error
                 ? "text-red-600 dark:text-red-400"
@@ -271,13 +292,13 @@ const ContactForm = ({showPopup, setShowPopup, emailSendError, setEmailSendError
       <button
         aria-label="Submit form"
         type="submit"
-        className="mt-4 flex items-center justify-center w-full gap-4 cursor-pointer rounded-lg gold-btn py-2.5 text-sm font-medium  transition-colors sm:text-base"
+        className="gold-btn mt-4 flex w-full cursor-pointer items-center justify-center gap-4 rounded-lg py-2.5 text-sm font-medium transition-colors sm:text-base"
       >
         <IoIosSend className="text-3xl" /> Send
       </button>
 
       <span
-        className={`text-sm text-red-400 ${allErrorsMsg.error ? allErrorsMsg.opacity : "opacity-0"}`}
+        className={`text-xs text-red-400 sm:text-sm ${allErrorsMsg.error ? allErrorsMsg.opacity : "opacity-0"}`}
       >
         {allErrorsMsg.error ? allErrorsMsg.msg : "Error"}
       </span>

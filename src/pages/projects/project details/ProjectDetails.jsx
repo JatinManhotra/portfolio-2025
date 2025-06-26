@@ -31,7 +31,7 @@ const ProjectDetails = () => {
 
   return (
     <>
-      <section className="mx-auto mt-10 w-full max-w-[85%] text-justify">
+      <section className="mx-auto mt-10 w-full max-w-[91%] sm:max-w-[85%] text-justify">
         <div className="flex items-center gap-10">
           <button
             aria-label="Navigate left"
@@ -41,17 +41,17 @@ const ProjectDetails = () => {
             <FaArrowLeftLong className="group-hover:-translate-x-2" /> Back
           </button>
 
-          <p className="text-lg">
+          <p className="sm:text-lg">
             <span className="subtext-color">{"Project > "}</span>{" "}
             {project.title}{" "}
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-10">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-10">
           <div className="animate-right">
             <div>
-              <h1 className="mb-4 text-4xl font-bold">{project.title}</h1>
-              <p className="subtext-color mb-6 text-lg">
+              <h1 className="mb-4 text-xl sm:text-4xl font-bold">{project.title}</h1>
+              <p className="subtext-color mb-6 sm:text-lg">
                 {project.description}
               </p>
             </div>
@@ -93,15 +93,15 @@ const ProjectDetails = () => {
               </video>
             </div>
 
-            <div className="border-deep-gold dark:border-gold/50 card-shadow dark-bg-gradient mt-10 rounded-xl border-1 p-6">
-              <h2 className="mb-4 flex items-center gap-4 text-2xl font-semibold">
+            <div className="border-deep-gold dark:border-gold/50 card-shadow dark-bg-gradient mt-10 rounded-xl border-1 p-3 sm:p-6">
+              <h2 className="mb-4 flex items-center gap-4 text-xl sm:text-2xl font-semibold">
                 <FaRegStar className="gold-text" /> Key Features
               </h2>
 
               {project.key_features.map((feature, index) => (
-                <div key={index} className="mx-auto my-5 max-w-[90%]">
-                  <h2 className="text-lg font-bold">{feature.ul}</h2>
-                  <ul className="marker:gold-text subtext-color mb-6 ml-6 list-disc">
+                <div key={index} className="mx-auto my-5 max-w-[95%] sm:max-w-[90%]">
+                  <h2 className="sm:text-lg font-bold">{feature.ul}</h2>
+                  <ul className="marker:gold-text subtext-color text-sm sm:text-base mb-6 ml-6 list-disc">
                     <li key={index}>{feature.li}</li>
                   </ul>
                 </div>
@@ -111,7 +111,7 @@ const ProjectDetails = () => {
         </div>
       </section>
 
-      <footer className="dark-color mt-6 flex h-20 w-full items-center justify-center">
+      <footer className="dark-color mt-6 flex text-sm sm:text-base h-20 w-full items-center justify-center">
         <div className="w-full">
           <div className="bg-subtext-light dark:bg-subtext-dark mx-auto mb-6 h-0.5 w-[85%]" />
           <span className="subtext-color block text-center">

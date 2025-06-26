@@ -93,19 +93,19 @@ const tools = [
 const MySkills = () => {
   return (
     <section id="skills" className="mt-20">
-      <h1 data-aos="fade-up" className="text-4xl text-center font-bold">
+      <h1 data-aos="fade-up" className="text-3xl sm:text-4xl text-center font-bold">
         My <span className="gold-text li-underline">Skills</span>
       </h1>
 
-      <h3 data-aos="zoom-in" data-aos-offset="200"  className="text-center subtext-color text-lg mt-6 mb-20">
+      <h3 data-aos="zoom-in" data-aos-offset="200"  className="text-center text-sm subtext-color sm:text-lg mt-6 mb-10 sm:mb-20">
         Here are the technologies I am familiar with
       </h3>
 
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 overflow-hidden hide-scrollbar ">
 
         <div data-aos="fade-right" data-aos-offset="200" className="mb-5">
-          <h2 className="orange-text text-center text-xl my-5">Languages</h2>
-          <div className="flex items-center gap-10 justify-center">
+          <h2 className="orange-text text-center sm:text-xl my-5">Languages</h2>
+          <div className="flex items-center gap-10 justify-center flex-wrap sm:flex-nowrap mb-5">
             {languages?.length > 0
               ? languages.map((item) => (
                   <IconBox
@@ -120,8 +120,8 @@ const MySkills = () => {
         </div>
 
         <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="100" className="mb-5">
-          <h2 className="orange-text text-center text-xl my-5">Libraries</h2>
-          <div className="flex items-center gap-10 justify-center">
+          <h2 className="orange-text text-center sm:text-xl my-5">Libraries</h2>
+          <div className="flex items-center gap-10 justify-center flex-wrap sm:flex-nowrap mb-5">
             {libraries?.length > 0
               ? libraries.map((item) => (
                   <IconBox
@@ -136,10 +136,10 @@ const MySkills = () => {
         </div>
 
         <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="200">
-          <h2 className="orange-text text-center text-xl my-5">
+          <h2 className="orange-text text-center sm:text-xl my-5">
             Frameworks
           </h2>
-          <div className="flex items-center gap-10 justify-center">
+          <div className="flex items-center gap-10 justify-center flex-wrap sm:flex-nowrap mb-5">
             {frameworks?.length > 0
               ? frameworks.map((item) => (
                   <IconBox
@@ -154,8 +154,8 @@ const MySkills = () => {
         </div>
 
         <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="300">
-          <h2 className="orange-text text-center text-xl my-5">Tools</h2>
-          <div className="flex items-center gap-10 justify-center">
+          <h2 className="orange-text text-center sm:text-xl my-5">Tools</h2>
+          <div className="flex items-center gap-10 justify-center flex-wrap sm:flex-nowrap">
             {tools?.length > 0
               ? tools.map((item) => (
                   <IconBox

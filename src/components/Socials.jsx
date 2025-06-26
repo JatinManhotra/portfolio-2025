@@ -5,7 +5,7 @@ import { FaLinkedin, FaLinkedinIn } from "react-icons/fa"
 const Socials = () => {
   return (
 
-   <aside className="fixed  top-0 gap-10 left-0 text-2xl flex flex-col justify-end items-center bottom-0  w-12">
+   <aside className="fixed hidden  top-0 gap-10 left-0 text-2xl sm:flex flex-col justify-end items-center bottom-0  w-12">
 
           {/* social media links */}
           <div className="flex flex-col items-center gap-4">

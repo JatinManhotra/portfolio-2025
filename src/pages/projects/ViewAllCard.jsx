@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const ViewAllCard = () => {
   return (
-    <div className="card-border card-shadow soft-bg-gradient dark:dark-bg-gradient rounded-lg p-6">
+    <div className="card-border card-shadow soft-bg-gradient dark:dark-bg-gradient rounded-lg p-4 sm:p-6">
       <div className="group overflow-hidden rounded-lg">
         <img
           className="scale-100 group-hover:scale-[1.02]"
@@ -12,8 +12,8 @@ const ViewAllCard = () => {
           alt="Github Page"
         />
       </div>
-      <h1 className="mt-4 text-xl font-bold">Want to see more?</h1>
-      <h3 className="subtext-color mt-4 h-25">Check out my Github profile!</h3>
+      <h1 className="mt-4 text-lg sm:text-xl font-bold">Want to see more?</h1>
+      <h3 className="subtext-color text-sm sm:text-base mt-4 h-30 sm:h-25">Check out my Github profile!</h3>
 
       <div className="mt-4 flex items-center gap-4">
         <a

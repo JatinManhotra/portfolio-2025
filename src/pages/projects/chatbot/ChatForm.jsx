@@ -43,13 +43,13 @@ const ChatForm = ({ input, setInput, chatHistory, setChatHistory, setLoading, se
 
 
   return (
-    <div className="my-2 px-6 pb-3">
+    <div className="my-2 px-4 sm:px-6 pb-3">
       <form
         onSubmit={(e) => handleSubmit(e, input)}
         className="flex items-center gap-4"
       >
         <input
-          className="soft-bg-gradient focus:ring-info-dark card-shadow text-main-light placeholder:subtext-color h-10 flex-1 rounded-full px-3 outline-none focus:ring-2"
+          className="soft-bg-gradient focus:ring-info-dark card-shadow text-main-light placeholder:subtext-color h-10 w-[90%] sm:w-full flex-1 text-sm sm:text-base rounded-full px-3 outline-none focus:ring-2"
           placeholder="Type your message"
           type="text"
           value={input}

@@ -18,7 +18,7 @@ const ChatMessage = ({ chat , loading, errorMsg }) => {
             src={uta_ai}
             alt="Uta AI"
           />
-          <p className="card-shadow text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
+          <p className="card-shadow text-sm sm:text-base text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
             {chat.text}
           </p>
         </div>
@@ -26,7 +26,7 @@ const ChatMessage = ({ chat , loading, errorMsg }) => {
 
       {chat.role === "user" && (
         <div className="mt-4 flex justify-end">
-          <p className="bg-info-dark card-shadow text-main-light max-w-[70%] rounded-l-lg rounded-tr-lg px-2 py-1">
+          <p className="bg-info-dark text-sm sm:text-base card-shadow text-main-light max-w-[70%] rounded-l-lg rounded-tr-lg px-2 py-1">
             {chat.text}
           </p>
         </div>
