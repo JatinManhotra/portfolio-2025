@@ -4,7 +4,7 @@ const AboutMe = () => {
   return (
     <section id="about" className="mt-40">
       <h2 data-aos="fade-up" className="text-center text-4xl font-bold">
-        About <span className="text-gold li-underline">Me</span>
+        About <span className="gold-text li-underline">Me</span>
       </h2>
 
       <div className="mt-10 flex items-center justify-between px-10">
@@ -16,10 +16,10 @@ const AboutMe = () => {
         />
 
         <div className="basis-[60%] text-justify subtext-color text-lg">
-          <h3 data-aos="fade-left" data-aos-delay="100" className="text-deep-gold mb-6 text-2xl">A bit about me</h3>
+          <h3 data-aos="fade-left" data-aos-delay="100" className="orange-text mb-6 text-2xl">A bit about me</h3>
 
           <p
-            data-aos="fade-left" data-aos-offset="300" 
+            data-aos="fade-left" data-aos-offset="250" 
           
           >
             Hi, I'm{" "}
@@ -36,7 +36,7 @@ const AboutMe = () => {
             <br />
           </p>
 
-          <p data-aos="fade-left" data-aos-delay="200"  data-aos-offset="200" >
+          <p data-aos="fade-left" data-aos-delay="100"  data-aos-offset="200" >
             As a self-driven learner, I've built several projects that reflect
             my ability to work with{" "}
             <span className="main-text-color font-bold">
@@ -50,7 +50,7 @@ const AboutMe = () => {
             .
           </p>
           <br />
-          <p data-aos="fade-left" data-aos-delay="300" data-aos-offset="200">
+          <p data-aos="fade-left" data-aos-delay="200" data-aos-offset="200">
             {" "}
             Right now, I'm looking for opportunities where I can contribute to a
             <span className="main-text-color font-bold"> team</span>, keep

@@ -8,8 +8,13 @@ import { Link } from "react-scroll";
 const Navbar = () => {
   const { dark, setDark } = useContext(MyContext);
 
+  const handleThemeToggle = (value) => {
+    setDark(value);
+    localStorage.setItem("dark", JSON.stringify(value))
+  }
+
   return (
-    <section className="dark:bg-surface-dark/30 fixed top-0 right-0 left-0 z-10 flex h-20 items-center justify-between px-6 backdrop-blur-md">
+    <section className="dark:bg-background-dark/30 bg-background-light/30 fixed top-0 right-0 left-0 z-10 flex h-20 items-center justify-between px-6 backdrop-blur-md">
       {/* left heading */}
       <h2 className="name-tag text-xl">{"<Jatin Manhotra/>"}</h2>
 
@@ -71,16 +76,16 @@ const Navbar = () => {
           offset={-100}
           duration={500}
         >
-          <button className="group light-btn custom-btn rounded-full">
+          <button aria-label="Contact me" className="group dark-btn dark:light-btn custom-btn rounded-full">
             <IoMdMail className="text-lg" /> Contact me
             <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>
         </Link>
 
         {/* toggle light/dark mode */}
-        <div className="border-gold flex items-center gap-1 rounded-full border-2 p-1">
+        <div className="border-gold  flex items-center gap-1 rounded-full border-2 p-1">
           <div
-            onClick={() => setDark(false)}
+            onClick={() => handleThemeToggle(false)}
             className={`${
               !dark ? "gold-btn" : ""
             } flex h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
@@ -89,7 +94,7 @@ const Navbar = () => {
           </div>
 
           <div
-            onClick={() => setDark(true)}
+            onClick={() => handleThemeToggle(true)}
             className={`${
               dark ? "gold-btn" : ""
             } flex h-6 w-6 cursor-pointer items-center justify-center rounded-full`}

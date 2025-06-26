@@ -21,7 +21,7 @@ const ViewAllCard = () => {
           target="_blank"
           href="https://github.com/JatinManhotra"
         >
-          <button className="custom-btn light-btn">
+          <button aria-label="Github profile" className="custom-btn dark-btn dark:light-btn">
             Github profile{" "}
             <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>

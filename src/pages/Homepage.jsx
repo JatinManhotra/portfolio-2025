@@ -78,7 +78,7 @@ const Homepage = () => {
             <span className="ml-4 flex items-center gap-2">
               Made with <FaHeart className="text-rose-500" /> by{" "}
               <a
-                className="hover:font-bold hover:text-white"
+                className="hover:font-bold dark:hover:text-white"
                 target="_blank"
                 href="https://www.github.com/JatinManhotra"
               >

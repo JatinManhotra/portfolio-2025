@@ -48,10 +48,10 @@ const Chatbot = () => {
       </div>
 
       <div
-        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed right-20 bottom-20 flex h-full max-h-140 w-100 origin-bottom-right flex-col justify-between rounded-lg px-6 py-3`}
+        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed right-20 bottom-20 flex h-full max-h-140 w-100 origin-bottom-right flex-col justify-between rounded-lg`}
       >
         {/* chatbot header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center px-6 py-3 dark:border-b-0 border-b border-subtext-dark dark:bg-transparent bg-light-gray justify-between">
           <div className="flex items-center gap-4">
             <img
               className="card-shadow h-12 w-12 rounded-full"
@@ -60,7 +60,7 @@ const Chatbot = () => {
             />
             <h2 className="text-lg">Uta - Chatbot</h2>
           </div>
-          <button>
+          <button aria-label="Collapse Chatbot">
             <IoIosArrowDown
               onClick={handleToggle}
               className="cursor-pointer text-xl"
@@ -69,7 +69,7 @@ const Chatbot = () => {
         </div>
 
         {/* chatbot body */}
-        <div className="hide-scrollbar h-full overflow-y-scroll">
+        <div className="hide-scrollbar h-full px-6 overflow-y-scroll">
           {/* ai msg */}
           <div className="item-center mt-4 flex gap-4">
             <img

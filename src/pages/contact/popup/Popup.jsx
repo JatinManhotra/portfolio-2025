@@ -29,12 +29,12 @@ const Popup = ({ showPopup, setShowPopup, emailSendError }) => {
   }, [showPopup, setShowPopup]);
 
   return (
-    <section className='flex items-center justify-center fixed top-0 left-0 bottom-0 right-0'>
+    <section className='flex items-center z-[98] justify-center fixed top-0 left-0 bottom-0 right-0'>
       {/* Overlay */}
-      <div onClick={() => setShowPopup(false)} className='animate-opacity bg-black/50 z-30 fixed top-0 left-0 bottom-0 right-0' />
+      <div onClick={() => setShowPopup(false)} className='animate-opacity bg-black/50 z-[99] fixed top-0 left-0 bottom-0 right-0' />
 
       {/* Popup Card */}
-      <div className={`scale-up relative flex flex-col items-center justify-center gap-10 w-80 h-80 rounded-lg card-shadow overflow-hidden card-border dark-bg-gradient z-40`}>
+      <div className={`scale-up relative flex flex-col items-center justify-center gap-10 w-80 h-80 rounded-lg card-shadow overflow-hidden card-border soft-bg-gradient dark:dark-bg-gradient z-[100]`}>
         <FaXmark onClick={() => setShowPopup(false)} className="absolute cursor-pointer text-2xl top-5 right-5" />
         
         <img className="mx-auto w-30" src={emailSendError ? error : success} alt="Status icon" />

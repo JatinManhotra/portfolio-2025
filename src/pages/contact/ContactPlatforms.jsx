@@ -7,7 +7,7 @@ const ContactPlatforms = () => {
   return (
     <div className="mt-10 flex items-center justify-center gap-10">
 
-      <div data-aos="fade-right" data-aos-offset="600" data-aos-delay="100"
+      <div data-aos="fade-right" data-aos-offset="500"
         onClick={() =>
           window.open(
             "https://wa.me/918493912066?text=Hi%20there%2C%20I%20saw%20your%20portfolio!",
@@ -24,32 +24,33 @@ const ContactPlatforms = () => {
         <p className="text-lg">WhatsApp</p>
       </div>
 
-      <div data-aos="fade-right" data-aos-offset="600" data-aos-delay="200" className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg px-6 py-3 hover:border-[#c3427b]/50">
+      <a href="https://www.instagram.com/manhotra.31/" target="_blank"  data-aos="fade-right" data-aos-offset="500" data-aos-delay="100" className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg px-6 py-3 hover:border-[#c3427b]/50">
         <img
           className="w-10 grayscale-100 group-hover:grayscale-0"
           src={instagram}
           alt="Whatsapp"
         />
+        
         <p className="text-lg">Instagram</p>
-      </div>
+      </a >
 
-      <div data-aos="fade-right" data-aos-offset="600" data-aos-delay="300" className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg px-6 py-3 hover:border-[#0078d4]/50">
+      <a href="https://www.linkedin.com/in/jatin-manhotra-5b474a347/" target="_blank" data-aos="fade-right" data-aos-offset="500" data-aos-delay="200" className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg px-6 py-3 hover:border-[#0078d4]/50">
         <img
           className="w-10 grayscale-100 group-hover:grayscale-0"
           src={linkedin}
           alt="Whatsapp"
         />
         <p className="text-lg">Linkedin</p>
-      </div>
+      </a>
 
-      <div data-aos="fade-right" data-aos-offset="600" data-aos-delay="400" className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg px-6 py-3 hover:border-[#0078d4]/50">
+      <a href="https://github.com/JatinManhotra" target="_blank" data-aos="fade-right" data-aos-offset="500" data-aos-delay="300" className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg px-6 py-3 hover:border-[#0078d4]/50">
         <img
           className="w-10 grayscale-100 group-hover:grayscale-0"
           src={github}
           alt="Whatsapp"
         />
         <p className="text-lg">Github</p>
-      </div>
+      </a>
     </div>
   );
 };

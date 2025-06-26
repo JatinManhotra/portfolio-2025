@@ -84,8 +84,9 @@ const Clock = () => {
           className="absolute top-0 right-2 cursor-pointer p-1 text-2xl"
         />
 
-        <div className="dark-bg-gradient absolute right-2 bottom-1 flex cursor-pointer items-center gap-2 self-start rounded-full px-2 text-sm text-gray-400">
+        <div className="bg-dark dark:dark-bg-gradient absolute right-2 bottom-1 flex cursor-pointer items-center gap-2 self-start rounded-full px-2 text-sm text-gray-400">
           <button
+          aria-label="24 hour"
             disabled={is24hr}
             className="disabled:text-gold cursor-pointer"
             onClick={() => setIs24hr(true)}
@@ -93,6 +94,7 @@ const Clock = () => {
             24H
           </button>
           <button
+          aria-label="12 hour"
             disabled={!is24hr}
             className="disabled:text-gold cursor-pointer"
             onClick={() => setIs24hr(false)}

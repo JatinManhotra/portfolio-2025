@@ -10,7 +10,7 @@ const TechApiIdeas = ({project}) => {
     <>
       <div className="my-20">
         <h2 className="mb-2 flex items-center gap-4 text-2xl font-semibold">
-          <FaCode className="text-gold" /> Technologies and Libraries Used
+          <FaCode className=" gold-text " /> Technologies and Libraries Used
         </h2>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-10">
@@ -22,13 +22,13 @@ const TechApiIdeas = ({project}) => {
 
       { project.api_used?.length > 0 && <div className="my-20">
         <h2 className="mb-2 flex items-center gap-4 text-2xl font-semibold">
-          <TbApi className="text-gold text-3xl" /> API Used
+          <TbApi className=" gold-text  text-3xl" /> API Used
         </h2>
 
         <ul className="my-4 text-lg">
           {project.api_used.map((api, index) => (
-            <li key={index} className="subtext-color marker:text-gold my-2 ml-6 list-disc">
-              <a className="font-bold text-black dark:text-white" href={api.link}>
+            <li key={index} className="subtext-color marker:gold-text  my-2 ml-6 list-disc">
+              <a target="_blank" className="font-bold text-black dark:text-white" href={api.link}>
                 {api.name}
               </a>{" "}
               - {api.text}
@@ -39,7 +39,7 @@ const TechApiIdeas = ({project}) => {
 
       <div className="my-20">
         <h2 className="mb-4 flex items-center gap-4 text-2xl font-semibold">
-          <HiOutlineLightBulb className="text-gold text-3xl" /> What's Next /
+          <HiOutlineLightBulb className=" gold-text  text-3xl" /> What's Next /
           Future Ideas
         </h2>
 
@@ -47,7 +47,7 @@ const TechApiIdeas = ({project}) => {
           {project.future_ideas.map((idea, index) => (
             <li
               key={index}
-              className="subtext-color marker:text-gold my-2 ml-6 list-disc"
+              className="subtext-color marker:gold-text  my-2 ml-6 list-disc"
             >
               {idea}
             </li>

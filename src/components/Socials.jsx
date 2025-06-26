@@ -12,17 +12,19 @@ const Socials = () => {
 
             <div className="group cursor-pointer">
             <RiGithubLine className="group-hover:hidden block" />
-            <GrGithub className="group-hover:block hidden" />
+            <a href="https://github.com/JatinManhotra" target="_blank"><GrGithub className="group-hover:block hidden" /></a>      
           </div>
 
           <div className="group cursor-pointer ">
             <RiInstagramLine  className="group-hover:hidden block" />
-            <RiInstagramFill  className="group-hover:block hidden" />
+            <a href="https://www.instagram.com/manhotra.31/" target="_blank"><RiInstagramFill  className="group-hover:block hidden" /></a>
+            
           </div>
 
           <div className="group cursor-pointer ">
             <FaLinkedinIn  className="group-hover:hidden block" />
-            <FaLinkedin  className="group-hover:block hidden" />
+            <a href="https://www.linkedin.com/in/jatin-manhotra-5b474a347/" target="_blank"> <FaLinkedin  className="group-hover:block hidden" /></a>
+           
           </div>
 
           </div>

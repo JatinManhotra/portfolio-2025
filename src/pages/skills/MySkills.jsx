@@ -94,17 +94,17 @@ const MySkills = () => {
   return (
     <section id="skills" className="mt-20">
       <h1 data-aos="fade-up" className="text-4xl text-center font-bold">
-        My <span className="text-gold">Skills</span>
+        My <span className="gold-text li-underline">Skills</span>
       </h1>
 
-      <h3 data-aos="zoom-in" data-aos-offset="300" data-aos-delay="100" className="text-center subtext-color text-lg mt-6 mb-20">
+      <h3 data-aos="zoom-in" data-aos-offset="200"  className="text-center subtext-color text-lg mt-6 mb-20">
         Here are the technologies I am familiar with
       </h3>
 
       <div className="grid grid-cols-2">
 
-        <div data-aos="fade-right" data-aos-offset="300" className="mb-5">
-          <h2 className="text-deep-gold text-center text-xl my-5">Languages</h2>
+        <div data-aos="fade-right" data-aos-offset="200" className="mb-5">
+          <h2 className="orange-text text-center text-xl my-5">Languages</h2>
           <div className="flex items-center gap-10 justify-center">
             {languages?.length > 0
               ? languages.map((item) => (
@@ -119,8 +119,8 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" data-aos-offset="300" data-aos-delay="200" className="mb-5">
-          <h2 className="text-deep-gold text-center text-xl my-5">Libraries</h2>
+        <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="100" className="mb-5">
+          <h2 className="orange-text text-center text-xl my-5">Libraries</h2>
           <div className="flex items-center gap-10 justify-center">
             {libraries?.length > 0
               ? libraries.map((item) => (
@@ -135,8 +135,8 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="300">
-          <h2 className="text-deep-gold text-center text-xl my-5">
+        <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="200">
+          <h2 className="orange-text text-center text-xl my-5">
             Frameworks
           </h2>
           <div className="flex items-center gap-10 justify-center">
@@ -153,8 +153,8 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="400">
-          <h2 className="text-deep-gold text-center text-xl my-5">Tools</h2>
+        <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="300">
+          <h2 className="orange-text text-center text-xl my-5">Tools</h2>
           <div className="flex items-center gap-10 justify-center">
             {tools?.length > 0
               ? tools.map((item) => (

@@ -15,15 +15,15 @@ const Card = ({ item }) => {
       <h1 className="mt-4 text-xl font-bold">{item.title}</h1>
       <h3 className="subtext-color h-25 mt-4">{item.short_description}</h3>
 
-      <div className="mt-4 flex items-center gap-4">
+      <div className="mt-4 flex items-center justify-between gap-4">
         {item?.live_demo && <a className="group" target="_blank" href={item.live_demo}>
-          <button className="custom-btn light-btn">
+          <button aria-label="Live project demo" className="custom-btn dark-btn dark:light-btn">
             Live Demo <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>
         </a>}
 
         <Link to={`/project/${item.title}`}>
-          <button className="subtext-color cursor-pointer">More Details</button>
+          <button aria-label="More project details" className="text-info dark:subtext-color cursor-pointer">More Details</button>
         </Link>
       </div>
     </div>

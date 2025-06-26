@@ -6,6 +6,8 @@ import musify from "../../assets/projects/Musify.png";
 import musifyVid from "../../assets/projects/Musify.mp4";
 import ticTac from "../../assets/projects/Tic Tac Toe.png";
 import ticTacVid from "../../assets/projects/Tic Tac.mp4";
+import portfolioVid from "../../assets/projects/portfolio.mp4";
+import portfolio from "../../assets/projects/portfolio.png";
 import utaVid from "../../assets/projects/uta.mp4";
 import uta from "../../assets/projects/uta.png";
 import react from "../../assets/icons/react.svg";
@@ -19,6 +21,90 @@ import leaflet from "../../assets/icons/leaflet.svg";
 import tailwind_css from "../../assets/icons/tailwind-css.svg";
 
 export const projectData = [
+  {
+    title: "My Portfolio",
+    description:
+      "A fully responsive and interactive portfolio website built using React and Tailwind CSS that showcases my skills, projects, and personality as a front-end web developer. It includes real-time form validation, animated components, smooth page transitions, theme toggling, and integration with external APIs for real-world functionalities.",
+    short_description:
+      "A fully responsive and interactive portfolio website built using React and Tailwind CSS that showcases my skills, projects, and personality as a front-end web developer.",
+    github_page: "https://github.com/JatinManhotra/portfolio-2025",
+    key_features: [
+      {
+        ul: "📱 Responsive Design",
+        li: "Tailored layouts for mobile, tablet, and desktop with media-query-based component behavior.",
+      },
+      {
+        ul: "🌙 Dark Mode Toggle",
+        li: "Persistent dark/light theme using 'useLocalStorage()' and Tailwind's dark mode support.",
+      },
+      {
+        ul: "📏 Custom Scrollbar",
+        li: "A top scroll indicator using state logic that updates smoothly as the user scrolls through the page.",
+      },
+      {
+        ul: "✨ Animated Components",
+        li: "Integrated AOS (Animate on Scroll) for entry animations.",
+      },
+      {
+        ul: "🧩 Project Showcase with Scroll Navigation",
+        li: "Projects are grouped in cards, with a final 'View All' card links to GitHub. Pagination indicators update dynamically with user scroll.",
+      },
+      {
+        ul: "🔗 Project Detail Routing",
+        li: "Each project opens on a dedicated route using React Router DOM.",
+      },
+      {
+        ul: "📬 Contact Form with Validation:",
+        li: "'@EmailJS' integration for sending emails directly from the browser. Name, email, and message inputs with real-time validation.",
+      },
+      {
+        ul: "⏰ Custom Clock Widget",
+        li: "Shows live time with 24-hour/12-hour format, and current day/date.",
+      }
+    ],
+    technology_used: [
+      {
+        icon: react,
+        name: "React js",
+        color: "#61DAFB",
+      },
+      {
+        icon: react_router,
+        name: "React Router DOM",
+        color: "#d0021b",
+      },
+      {
+        icon: react_icons,
+        name: "React Icons",
+        color: "#e91e63",
+      },
+      {
+        icon: tailwind_css,
+        name: "Tailwind CSS",
+        color: "#06B6D4",
+      },
+    ],
+    api_used: [
+      {
+        name: "EmailJS",
+        link: "https://www.emailjs.com/",
+        text: "Sends contact form information directly to your email.",
+      },
+       {
+        name: "Gemini API",
+        link: "https://ai.google.dev/gemini-api/docs",
+        text: "Used to generate AI responses based on user prompts. Model: gemini-2.0-flash",
+      }
+    ],
+    video: portfolioVid,
+    img: portfolio,
+    future_ideas: [
+      "🗂️ Add project filtering by category or tech stack.",
+      "🎖️ Add Achievements, Certificates, and Client projects sections.",
+      "📽️ Use Framer Motion for smoother, React-native animations.",
+      "👤 Improve accessibility.",
+    ],
+  },
   {
     title: "Weather Dashboard",
     description:

@@ -41,6 +41,14 @@
   --color-shadow-dark: rgba(0, 0, 0, 0.3);
 }
 
+@utility gold-text{
+  @apply text-deep-gold dark:text-gold
+}
+
+@utility orange-text{
+  @apply text-info dark:text-deep-gold
+}
+
 @utility background-color {
   @apply bg-background-light text-main-light dark:bg-background-dark dark:text-main-dark;
 }
@@ -55,6 +63,10 @@
 
 @utility light-btn {
   @apply soft-bg-gradient text-main-light;
+}
+
+@utility dark-btn {
+  @apply bg-subtext-light text-main-dark;
 }
 
 @utility gold-btn {
@@ -129,7 +141,7 @@
 
 @layer components {
   .li-hover {
-    @apply hover:text-deep-gold dark:hover:text-gold cursor-pointer transition-all duration-100 ease-in;
+    @apply hover:gold-text cursor-pointer transition-all duration-100 ease-in;
   }
   .custom-btn {
     @apply card-shadow flex scale-100 cursor-pointer items-center gap-2 rounded-lg px-5 py-2 hover:scale-[1.02];
@@ -154,6 +166,17 @@
     transition: background-color 9999s ease-in-out 0s;
     -webkit-box-shadow: 0 0 0px 1000px #191a1b inset; /* match dark bg (like bg-gray-800) */
   }
+}
+
+::selection {
+  background: var(--color-info-dark);
+  color: white;
+}
+
+/* Dark mode selection */
+html.dark ::selection {
+  background: rgba(255,255,255,0.8);
+  color: #000;
 }
 
 * {
@@ -189,10 +212,14 @@ body {
   left: 0;
   right: 0;
   height: 0.1563rem;
-  background-color: #ffd22a;
+  background-color: var(--color-deep-gold);
   transform-origin: bottom right;
   transform: scaleX(0);
   transition: transform 0.5s ease;
+}
+
+html.dark .li-underline::before {
+  background-color: var(--color-gold);
 }
 
 .li-underline:hover::before {
@@ -201,10 +228,14 @@ body {
 }
 
 .active{
-  color: var(--color-gold);
+  color: var(--color-deep-gold);
   text-decoration: underline;
   text-decoration-thickness:  0.1563rem;
   text-underline-offset: .25rem;
+}
+
+html.dark .active{
+  color: var(--color-gold);
 }
 
 .custom-caret::before {

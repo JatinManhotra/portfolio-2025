@@ -21,7 +21,7 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  },[]);
+  }, []);
 
   if (!project) {
     return (
@@ -34,8 +34,9 @@ const ProjectDetails = () => {
       <section className="mx-auto mt-10 w-full max-w-[85%] text-justify">
         <div className="flex items-center gap-10">
           <button
+            aria-label="Navigate left"
             onClick={() => navigate(-1)}
-            className="group custom-btn light-btn"
+            className="group custom-btn dark-btn dark:light-btn"
           >
             <FaArrowLeftLong className="group-hover:-translate-x-2" /> Back
           </button>
@@ -57,21 +58,30 @@ const ProjectDetails = () => {
 
             <TechAndFeatures project={project} />
 
-            {(project?.github_page || project?.live_demo) && <div className="my-10 flex items-center gap-6">
-              <a href={project.live_demo} target="_blank">
-                <button className="custom-btn light-btn group">
-                  <FiExternalLink className="text-lg group-hover:rotate-12" />{" "}
-                  Live Demo
-                </button>
-              </a>
-
-              <a href={project.github_page} target="_blank">
-                <button className="custom-btn gold-btn group">
-                  <FiGithub className="text-lg group-hover:rotate-12" /> Github
-                  code
-                </button>
-              </a>
-            </div>}
+            <div className="my-10 flex items-center gap-6">
+              {project?.live_demo && (
+                <a href={project.live_demo} target="_blank">
+                  <button
+                    aria-label="Live project demo"
+                    className="custom-btn dark-btn dark:light-btn group"
+                  >
+                    <FiExternalLink className="text-lg group-hover:rotate-12" />{" "}
+                    Live Demo
+                  </button>
+                </a>
+              )}
+              {project?.github_page && (
+                <a href={project.github_page} target="_blank">
+                  <button
+                    aria-label="Github code link"
+                    className="custom-btn gold-btn group"
+                  >
+                    <FiGithub className="text-lg group-hover:rotate-12" />{" "}
+                    Github code
+                  </button>
+                </a>
+              )}
+            </div>
 
             <TechApiIdeas project={project} />
           </div>
@@ -83,15 +93,15 @@ const ProjectDetails = () => {
               </video>
             </div>
 
-            <div className="border-gold/50 card-shadow dark-bg-gradient mt-10 rounded-xl border-1 p-6">
+            <div className="border-deep-gold dark:border-gold/50 card-shadow dark-bg-gradient mt-10 rounded-xl border-1 p-6">
               <h2 className="mb-4 flex items-center gap-4 text-2xl font-semibold">
-                <FaRegStar className="text-gold" /> Key Features
+                <FaRegStar className="gold-text" /> Key Features
               </h2>
 
               {project.key_features.map((feature, index) => (
                 <div key={index} className="mx-auto my-5 max-w-[90%]">
                   <h2 className="text-lg font-bold">{feature.ul}</h2>
-                  <ul className="marker:text-gold subtext-color mb-6 ml-6 list-disc">
+                  <ul className="marker:gold-text subtext-color mb-6 ml-6 list-disc">
                     <li key={index}>{feature.li}</li>
                   </ul>
                 </div>
@@ -101,18 +111,17 @@ const ProjectDetails = () => {
         </div>
       </section>
 
-      <footer className="mt-6 flex h-20 w-full items-center justify-center dark-color">
+      <footer className="dark-color mt-6 flex h-20 w-full items-center justify-center">
         <div className="w-full">
-          <div className="bg-subtext-light dark:bg-subtext-dark mb-6 h-0.5 w-[85%] mx-auto" />
+          <div className="bg-subtext-light dark:bg-subtext-dark mx-auto mb-6 h-0.5 w-[85%]" />
           <span className="subtext-color block text-center">
             © 2025 - All Rights Reserved.
           </span>
         </div>
       </footer>
 
-      <Chatbot/>
-      <Clock/>
-
+      <Chatbot />
+      <Clock />
     </>
   );
 };

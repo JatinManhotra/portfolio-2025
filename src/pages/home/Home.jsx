@@ -103,15 +103,15 @@ const Home = () => {
 
       <div className="mt-10 flex items-center gap-6"> 
 
-        <a>
-          <button className="light-btn text-main-light group custom-btn">
+        <a href="https://github.com/JatinManhotra" target="_blank">
+          <button aria-label="Github profile" className="dark:light-btn dark-btn group custom-btn">
           <GrGithub className="text-xl"/> My Github Profile
           <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>
           </a>
 
         <a>
-          <button className="gold-btn group custom-btn">
+          <button aria-label="Resume" className="gold-btn group custom-btn">
           Resume
           </button>
         </a>

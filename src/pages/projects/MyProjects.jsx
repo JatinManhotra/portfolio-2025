@@ -72,10 +72,10 @@ const MyProjects = () => {
   return (
     <section id="projects" className="mt-40">
       <h1 data-aos="fade-up" className="text-4xl text-center font-bold">
-        My <span className="text-gold">Projects</span>
+        My <span className="gold-text li-underline">Projects</span>
       </h1>
 
-      <h3 data-aos="zoom-in" data-aos-offset="300" data-aos-delay="100" className="text-center subtext-color text-lg mt-6 mb-10">
+      <h3 data-aos="zoom-in" data-aos-offset="200" className="text-center subtext-color text-lg mt-6 mb-10">
         Below are some of my projects. You can find all of them on my{" "}
         <a
           target="_blank"
@@ -87,7 +87,7 @@ const MyProjects = () => {
         page
       </h3>
 
-      <div data-aos="fade-up" data-aos-offset="300" data-aos-delay="100" className="flex items-center justify-between px-3">
+      <div data-aos="fade-up" data-aos-offset="250" className="flex items-center justify-between px-3">
         <div
           onClick={handlePrev}
           className="w-15 h-15 rounded-full cursor-pointer   flex items-center justify-center gold-btn"
@@ -127,7 +127,7 @@ const MyProjects = () => {
 
       <div className="mt-6 flex justify-center gap-2">
         {groupedProjects.map((_, i) => (
-          <button
+          <button aria-label="Pagination"
             key={i}
             onClick={() => {
               const groupWidth = scrollRef.current.offsetWidth;
@@ -138,7 +138,7 @@ const MyProjects = () => {
               setPage(i);
             }}
             className={`w-3 h-3 cursor-pointer rounded-full transition-all duration-300 ${
-              page === i ? "bg-gold scale-110" : "bg-gray-400"
+              page === i ? "bg-deep-gold dark:bg-gold scale-110" : "bg-gray-400"
             }`}
           />
         ))}
