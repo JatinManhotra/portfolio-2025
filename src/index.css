@@ -200,6 +200,13 @@ body {
   transform: scaleX(1);
 }
 
+.active{
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-decoration-thickness:  0.1563rem;
+  text-underline-offset: .25rem;
+}
+
 .custom-caret::before {
   content: "";
   top: 50%;

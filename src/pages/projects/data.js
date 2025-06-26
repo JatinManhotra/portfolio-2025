@@ -6,6 +6,8 @@ import musify from "../../assets/projects/Musify.png";
 import musifyVid from "../../assets/projects/Musify.mp4";
 import ticTac from "../../assets/projects/Tic Tac Toe.png";
 import ticTacVid from "../../assets/projects/Tic Tac.mp4";
+import utaVid from "../../assets/projects/uta.mp4";
+import uta from "../../assets/projects/uta.png";
 import react from "../../assets/icons/react.svg";
 import react_icons from "../../assets/icons/react-icons.svg";
 import react_router from "../../assets/icons/react-router.svg";
@@ -67,26 +69,32 @@ export const projectData = [
       {
         icon: react,
         name: "React js",
+        color: "#61DAFB",
       },
       {
         icon: react_router,
         name: "React Router DOM",
+        color: "#d0021b",
       },
       {
         icon: react_icons,
         name: "React Icons",
+        color: "#e91e63",
       },
       {
         icon: moment,
         name: "Moment js",
+        color: "#529990",
       },
       {
         icon: leaflet,
         name: "Leaflet js",
+        color: "#61ba9e",
       },
       {
         icon: tailwind_css,
         name: "Tailwind CSS",
+        color: "#06B6D4",
       },
     ],
     api_used: [
@@ -145,26 +153,32 @@ export const projectData = [
       {
         icon: react,
         name: "React js",
+         color: "#61DAFB",
       },
       {
         icon: react_router,
         name: "React Router DOM",
+         color: "#d0021b",
       },
       {
         icon: redux,
         name: "Redux Toolkit + RTK Query",
+         color: "#764ABC",
       },
       {
         icon: react,
         name: "Context API",
+         color: "#61DAFB",
       },
       {
         icon: react_icons,
         name: "React Icons",
+        color: "#e91e63",
       },
       {
         icon: tailwind_css,
         name: "Tailwind CSS",
+        color: "#06B6D4",
       },
     ],
     api_used: [
@@ -226,10 +240,12 @@ export const projectData = [
       {
         icon: react,
         name: "React js",
+        color: "#61DAFB",
       },
       {
         icon: css,
         name: "CSS3",
+         color: "#1572B6",
       },
     ],
     video: ticTacVid,
@@ -283,26 +299,32 @@ export const projectData = [
       {
         icon: react,
         name: "React js",
+         color: "#61DAFB",
       },
       {
         icon: react_router,
         name: "React Router DOM",
+         color: "#d0021b",
       },
       {
         icon: react,
         name: "Context API",
+         color: "#61DAFB",
       },
       {
         icon: react_icons,
         name: "React Icons",
+         color: "#e91e63",
       },
       {
         icon: firebase,
         name: "Firebase",
+        color: "#FFCA28",
       },
       {
         icon: tailwind_css,
         name: "Tailwind CSS",
+        color: "#06B6D4",
       },
     ],
     api_used: [
@@ -325,6 +347,70 @@ export const projectData = [
       "📤 Upload files and send them to AI",
       "🖼️ Image generation from a prompt",
       "☝🏼 Model selection (e.g., Gemini Pro, Claude, etc.)",
+    ],
+  },
+  {
+    title: "Uta - Chatbot",
+    description:
+      "A responsive AI chatbot built with React and the Gemini API, designed to provide real-time interactions in a clean interface. Uta supports dynamic conversations using state management, features a toggle able chat icon with animated transitions, and includes dark mode compatibility. Built with modular React components and state logic for toggling, animation, and rendering AI responses in real-time.",
+    short_description:
+      "A responsive AI chatbot built with React and the Gemini API, designed to provide real-time interactions in a clean interface.",
+    key_features: [
+      {
+        ul: "🎤 Real-time AI Responses",
+        li: "Uta responds to user prompts instantly, mimicking natural conversation flow. Remembers the last conversation and responds accordingly to it.",
+      },
+      {
+        ul: "⚛️ React-Powered Interface",
+        li: "Clean component structure using React and state management for toggling the chat window, animations, and conditional rendering.",
+      },
+      {
+        ul: "🎭 Toggleable Animated Icon",
+        li: "A minimal chatbot icon (Uta) that transforms into a close (❌) button with subtle rotation animations on click.",
+      },
+      {
+        ul: "🌙 Dark Mode Support",
+        li: "Seamlessly adapts to dark/light themes for a consistent user experience across devices.",
+      },
+      {
+        ul: "📱 Responsive Design",
+        li: "Mobile-first and desktop-friendly layout ensures Uta works smoothly across screen sizes.",
+      },
+      {
+        ul: "🧠 Stateless Mode ",
+        li: "Optionally designed to not save chat history, refreshing the page resets the conversation.",
+      }
+    ],
+    technology_used: [
+      {
+        icon: react,
+        name: "React js",
+         color: "#61DAFB",
+      },
+      {
+        icon: react_icons,
+        name: "React Icons",
+         color: "#e91e63",
+      },
+      {
+        icon: tailwind_css,
+        name: "Tailwind CSS",
+        color: "#06B6D4",
+      },
+    ],
+    api_used: [
+      {
+        name: "Gemini API",
+        link: "https://ai.google.dev/gemini-api/docs",
+        text: "Used to generate AI responses based on user prompts. Model: gemini-2.0-flash",
+      }
+    ],
+    video: utaVid,
+    img: uta,
+    future_ideas: [
+      "🎨 Customizable Avatar & Themes",
+      "🎙️ Voice input/output",
+      "📤 Export Chat Option",
     ],
   },
 ];

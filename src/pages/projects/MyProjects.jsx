@@ -70,12 +70,12 @@ const MyProjects = () => {
   }, []);
 
   return (
-    <section className="mt-40">
-      <h1 className="text-4xl text-center font-bold">
+    <section id="projects" className="mt-40">
+      <h1 data-aos="fade-up" className="text-4xl text-center font-bold">
         My <span className="text-gold">Projects</span>
       </h1>
 
-      <h3 className="text-center subtext-color text-lg mt-6 mb-10">
+      <h3 data-aos="zoom-in" data-aos-offset="300" data-aos-delay="100" className="text-center subtext-color text-lg mt-6 mb-10">
         Below are some of my projects. You can find all of them on my{" "}
         <a
           target="_blank"
@@ -87,7 +87,7 @@ const MyProjects = () => {
         page
       </h3>
 
-      <div className="flex items-center justify-between px-3">
+      <div data-aos="fade-up" data-aos-offset="300" data-aos-delay="100" className="flex items-center justify-between px-3">
         <div
           onClick={handlePrev}
           className="w-15 h-15 rounded-full cursor-pointer   flex items-center justify-center gold-btn"

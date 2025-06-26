@@ -5,7 +5,7 @@ const IconBox = ({icon, color, text}) => {
    style={{
   filter: `drop-shadow(0 0 6px ${color})`
 }}
-  className="w-24 h-24 flex items-center justify-center rounded-full soft-bg-gradient dark:bg-surface-dark">
+  className="w-24 h-24 flex items-center justify-center rounded-full soft-bg-gradient dark:dark-bg-gradient">
     <img
       src={icon}
       alt="icon svg"

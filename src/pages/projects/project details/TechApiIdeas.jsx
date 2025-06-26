@@ -15,12 +15,12 @@ const TechApiIdeas = ({project}) => {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-10">
           {project.technology_used.map((tech, index) => (
-            <IconBox key={index} icon={tech.icon} text={tech.name} />
+            <IconBox key={index} icon={tech.icon} color={tech.color} text={tech.name} />
           ))}
         </div>
       </div>
 
-      <div className="my-20">
+      { project.api_used?.length > 0 && <div className="my-20">
         <h2 className="mb-2 flex items-center gap-4 text-2xl font-semibold">
           <TbApi className="text-gold text-3xl" /> API Used
         </h2>
@@ -35,7 +35,7 @@ const TechApiIdeas = ({project}) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div>}
 
       <div className="my-20">
         <h2 className="mb-4 flex items-center gap-4 text-2xl font-semibold">

@@ -11,43 +11,43 @@ const ContactMe = () => {
   const [emailSendError, setEmailSendError] = useState(false);
 
   return (
-    <section className="mt-20">
-      <h1 className="text-center text-4xl font-bold">
+    <section  id="contact" className="mt-40">
+      <h1 data-aos="fade-up" data-aos-offset="500" className="text-center text-4xl font-bold">
         Contact <span className="text-gold">Me</span>
       </h1>
 
-      <h3 className="subtext-color mt-6 mb-5 text-center text-lg">
+      <h3 data-aos="zoom-in" data-aos-offset="600" data-aos-delay="100" className="subtext-color mt-6 mb-5 text-center text-lg">
         If you want to know more about me, or if you would just like to say
         hello, send me a message. I'd love to hear from you.
       </h3>
 
-      <div className="mx-auto mt-10 max-w-[90%]">
+      <div className="mx-auto mt-20 max-w-[90%]">
 
         <div>
-        <h2 className="text-deep-gold text-xl">Get in touch</h2>
-        <h3 className="subtext-color mt-2 text-lg">
+        <h2 data-aos="fade-right" data-aos-offset="600" data-aos-delay="100" className="text-deep-gold text-xl">Get in touch</h2>
+        <h3 data-aos="fade-right" data-aos-offset="600" data-aos-delay="150" className="subtext-color mt-2 text-lg">
           You can reach me on these platforms.
         </h3>
 
         <ContactPlatforms/>
       </div>
 
-      <div className="relative py-3 mt-10 w-full">
+      <div data-aos="zoom-in" data-aos-offset="700" data-aos-delay="100" className="relative py-3 mt-10 w-full">
         <hr />
         <p className="absolute top-0 left-[50%] translate-x-[-50%] background-color px-3">OR</p>
       </div>
 
-      <h3 className="subtext-color mt-10 text-lg">
+      <h3 data-aos="fade-right" data-aos-offset="650" data-aos-delay="100" className="subtext-color mt-10 text-lg">
           Send me a email
         </h3>
 
       <div className="mt-10 flex items-center gap-10 justify-between">
 
-        <div className="basis-[40%]">
+        <div data-aos="fade-right" data-aos-offset="400" data-aos-delay="100" className="basis-[40%]">
           <img src={contact} alt="Contact svg" />
         </div>
 
-        <div className="flex-1 dark-bg-gradient card-shadow card-border py-4 rounded-lg">
+        <div data-aos="fade-left" data-aos-offset="700" data-aos-delay="100" className="flex-1 dark-bg-gradient card-shadow card-border py-4 rounded-lg">
           <ContactForm showPopup={showPopup} setShowPopup={setShowPopup} emailSendError={emailSendError} setEmailSendError={setEmailSendError}/>
         </div>
 

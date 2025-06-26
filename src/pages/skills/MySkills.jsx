@@ -40,7 +40,7 @@ const libraries = [
   {
     icon: react_router,
     color: "#d0021b",
-    text: "React Router",
+    text: "React Router DOM",
   },
   {
     icon: redux,
@@ -92,18 +92,18 @@ const tools = [
 
 const MySkills = () => {
   return (
-    <section className="mt-20">
-      <h1 className="text-4xl text-center font-bold">
+    <section id="skills" className="mt-20">
+      <h1 data-aos="fade-up" className="text-4xl text-center font-bold">
         My <span className="text-gold">Skills</span>
       </h1>
 
-      <h3 className="text-center subtext-color text-lg mt-6 mb-20">
+      <h3 data-aos="zoom-in" data-aos-offset="300" data-aos-delay="100" className="text-center subtext-color text-lg mt-6 mb-20">
         Here are the technologies I am familiar with
       </h3>
 
       <div className="grid grid-cols-2">
 
-        <div className="mb-5">
+        <div data-aos="fade-right" data-aos-offset="300" className="mb-5">
           <h2 className="text-deep-gold text-center text-xl my-5">Languages</h2>
           <div className="flex items-center gap-10 justify-center">
             {languages?.length > 0
@@ -119,7 +119,7 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div className="mb-5">
+        <div data-aos="fade-left" data-aos-offset="300" data-aos-delay="200" className="mb-5">
           <h2 className="text-deep-gold text-center text-xl my-5">Libraries</h2>
           <div className="flex items-center gap-10 justify-center">
             {libraries?.length > 0
@@ -135,7 +135,7 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div>
+        <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="300">
           <h2 className="text-deep-gold text-center text-xl my-5">
             Frameworks
           </h2>
@@ -153,7 +153,7 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div>
+        <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="400">
           <h2 className="text-deep-gold text-center text-xl my-5">Tools</h2>
           <div className="flex items-center gap-10 justify-center">
             {tools?.length > 0

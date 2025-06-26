@@ -16,11 +16,11 @@ const Card = ({ item }) => {
       <h3 className="subtext-color h-25 mt-4">{item.short_description}</h3>
 
       <div className="mt-4 flex items-center gap-4">
-        <a className="group" target="_blank" href={item.live_demo}>
+        {item?.live_demo && <a className="group" target="_blank" href={item.live_demo}>
           <button className="custom-btn light-btn">
             Live Demo <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>
-        </a>
+        </a>}
 
         <Link to={`/project/${item.title}`}>
           <button className="subtext-color cursor-pointer">More Details</button>

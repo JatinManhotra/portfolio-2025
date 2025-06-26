@@ -80,7 +80,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="flex h-[calc(100dvh_-_5rem)] items-center pt-10 justify-between">
+    <section id="home" className="flex h-[calc(100dvh_-_5rem)] items-center pt-10 justify-between">
 
 
       {/* introduction and useful links */}

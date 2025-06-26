@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import TechAndFeatures from "./TechandFeatures";
 import TechApiIdeas from "./TechApiIdeas";
 import { projectData } from "../data";
+import Clock from "../../../components/Clock";
+import Chatbot from "../chatbot/Chatbot";
 
 const ProjectDetails = () => {
   const { projectName } = useParams();
@@ -55,7 +57,7 @@ const ProjectDetails = () => {
 
             <TechAndFeatures project={project} />
 
-            <div className="my-10 flex items-center gap-6">
+            {(project?.github_page || project?.live_demo) && <div className="my-10 flex items-center gap-6">
               <a href={project.live_demo} target="_blank">
                 <button className="custom-btn light-btn group">
                   <FiExternalLink className="text-lg group-hover:rotate-12" />{" "}
@@ -69,7 +71,7 @@ const ProjectDetails = () => {
                   code
                 </button>
               </a>
-            </div>
+            </div>}
 
             <TechApiIdeas project={project} />
           </div>
@@ -101,12 +103,16 @@ const ProjectDetails = () => {
 
       <footer className="mt-6 flex h-20 w-full items-center justify-center dark-color">
         <div className="w-full">
-          <div className="bg-subtext-light dark:bg-subtext-dark mb-6 h-0.5 w-full" />
+          <div className="bg-subtext-light dark:bg-subtext-dark mb-6 h-0.5 w-[85%] mx-auto" />
           <span className="subtext-color block text-center">
             © 2025 - All Rights Reserved.
           </span>
         </div>
       </footer>
+
+      <Chatbot/>
+      <Clock/>
+
     </>
   );
 };

@@ -3,7 +3,7 @@ import { FaCode, FaRegStar } from "react-icons/fa";
 
 const TechAndFeatures = ({project}) => {
   return (
-    <div className="soft-bg-gradient dark:bg-surface-dark flex items-center gap-4 rounded-lg p-3">
+    <div className="soft-bg-gradient dark:dark-bg-gradient flex items-center gap-4 rounded-lg p-3">
       <div className="hover:border-gold border-gold dark:border-gold/50 flex w-full scale-100 items-center gap-4 rounded-lg border-1 px-4 py-3 hover:scale-[1.02]">
         <div className="bg-deep-gold flex h-8 w-8 items-center justify-center rounded-full">
           <FaCode className="text-main-light text-xl" />

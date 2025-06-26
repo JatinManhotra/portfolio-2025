@@ -7,13 +7,13 @@ const RandomFacts = () => {
 
   return (
     <section className=' py-10 min-h-[20rem]'>
-        <h1 className='italic text-center font-bold text-4xl'>"Check out this <span className='text-gold'>fact!</span>"</h1>
-        <p className='mt-20 text-4xl max-w-[80%] mx-auto italic text-center'>
+        <h1 data-aos="fade-up" className='italic text-center font-bold text-4xl'>"Check out this <span className='text-gold'>fact!</span>"</h1>
+        <p data-aos="flip-up" className='mt-20 text-4xl max-w-[80%] mx-auto italic text-center'>
             {
                 factLoading ? "A fact is on the way!" : `"${fact}"`
             }
         </p>
-        <button onClick={()=>fetchFacts()} className='light-btn custom-btn mx-auto mt-20'>Get a new fact!</button>
+        <button data-aos="zoom-in" onClick={()=>fetchFacts()} className='light-btn custom-btn mx-auto mt-20'>Get a new fact!</button>
     </section>
   )
 }
