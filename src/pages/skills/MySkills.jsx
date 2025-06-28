@@ -13,6 +13,7 @@ import bootstrap from "../../assets/icons/bootstrap.svg";
 import github from "../../assets/icons/github.svg";
 import IconBox from "./IconBox";
 
+  // my skills data
 const languages = [
   {
     icon: html,
@@ -46,7 +47,7 @@ const libraries = [
     icon: redux,
     color: "#764ABC",
     text: "Redux",
-  }
+  },
 ];
 
 const frameworks = [
@@ -93,19 +94,30 @@ const tools = [
 const MySkills = () => {
   return (
     <section id="skills" className="mt-20 lg:mt-40">
-      <h1 data-aos="fade-up" className="text-3xl lg:text-4xl text-center font-bold">
+
+      {/* my skills heading */}
+      <h1
+        data-aos="fade-up"
+        className="text-center text-3xl font-bold lg:text-4xl"
+      >
         My <span className="gold-text li-underline">Skills</span>
       </h1>
 
-      <h3 data-aos="zoom-in" data-aos-offset="200"  className="text-center text-sm subtext-color sm:text-lg mt-6 mb-10 lg:mb-20">
+      {/* sub heading */}
+      <h3
+        data-aos="zoom-in"
+        data-aos-offset="200"
+        className="subtext-color mt-6 mb-10 text-center text-sm sm:text-lg lg:mb-20"
+      >
         Here are the technologies I am familiar with
       </h3>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden py-5 ">
+      <div className="grid grid-cols-1 overflow-hidden py-5 lg:grid-cols-2">
 
+        {/* languages component */}
         <div data-aos="fade-right" data-aos-offset="200" className="mb-5">
-          <h2 className="orange-text text-center sm:text-xl my-5">Languages</h2>
-          <div className="flex items-center gap-10 justify-center flex-wrap xl:flex-nowrap mb-5">
+          <h2 className="orange-text my-5 text-center sm:text-xl">Languages</h2>
+          <div className="mb-5 flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
             {languages?.length > 0
               ? languages.map((item) => (
                   <IconBox
@@ -119,9 +131,15 @@ const MySkills = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="100" className="mb-5">
-          <h2 className="orange-text text-center sm:text-xl my-5">Libraries</h2>
-          <div className="flex items-center gap-10 justify-center flex-wrap xl:flex-nowrap mb-5">
+        {/* libraries component */}
+        <div
+          data-aos="fade-left"
+          data-aos-offset="200"
+          data-aos-delay="100"
+          className="mb-5"
+        >
+          <h2 className="orange-text my-5 text-center sm:text-xl">Libraries</h2>
+          <div className="mb-5 flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
             {libraries?.length > 0
               ? libraries.map((item) => (
                   <IconBox
@@ -135,11 +153,12 @@ const MySkills = () => {
           </div>
         </div>
 
+        {/* framework component */}
         <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="200">
-          <h2 className="orange-text text-center sm:text-xl my-5">
+          <h2 className="orange-text my-5 text-center sm:text-xl">
             Frameworks
           </h2>
-          <div className="flex items-center gap-10 justify-center flex-wrap xl:flex-nowrap mb-5">
+          <div className="mb-5 flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
             {frameworks?.length > 0
               ? frameworks.map((item) => (
                   <IconBox
@@ -153,9 +172,10 @@ const MySkills = () => {
           </div>
         </div>
 
+        {/* tools component */}
         <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="300">
-          <h2 className="orange-text text-center sm:text-xl my-5">Tools</h2>
-          <div className="flex items-center gap-10 justify-center flex-wrap xl:flex-nowrap">
+          <h2 className="orange-text my-5 text-center sm:text-xl">Tools</h2>
+          <div className="flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
             {tools?.length > 0
               ? tools.map((item) => (
                   <IconBox

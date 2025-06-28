@@ -21,6 +21,8 @@ import leaflet from "../../assets/icons/leaflet.svg";
 import tailwind_css from "../../assets/icons/tailwind-css.svg";
 
 export const projectData = [
+
+  // portfolio
   {
     title: "My Portfolio",
     description:
@@ -60,7 +62,7 @@ export const projectData = [
       {
         ul: "⏰ Custom Clock Widget",
         li: "Shows live time with 24-hour/12-hour format, and current day/date.",
-      }
+      },
     ],
     technology_used: [
       {
@@ -90,11 +92,11 @@ export const projectData = [
         link: "https://www.emailjs.com/",
         text: "Sends contact form information directly to your email.",
       },
-       {
+      {
         name: "Gemini API",
         link: "https://ai.google.dev/gemini-api/docs",
         text: "Used to generate AI responses based on user prompts. Model: gemini-2.0-flash",
-      }
+      },
     ],
     video: portfolioVid,
     img: portfolio,
@@ -105,6 +107,8 @@ export const projectData = [
       "👤 Improve accessibility.",
     ],
   },
+
+  // weather dashboard
   {
     title: "Weather Dashboard",
     description:
@@ -197,6 +201,8 @@ export const projectData = [
       "⚠️ Show real-time weather alerts or warnings",
     ],
   },
+
+  // musify app
   {
     title: "Musify - Music Streaming App",
     description:
@@ -239,22 +245,22 @@ export const projectData = [
       {
         icon: react,
         name: "React js",
-         color: "#61DAFB",
+        color: "#61DAFB",
       },
       {
         icon: react_router,
         name: "React Router DOM",
-         color: "#d0021b",
+        color: "#d0021b",
       },
       {
         icon: redux,
         name: "Redux Toolkit + RTK Query",
-         color: "#764ABC",
+        color: "#764ABC",
       },
       {
         icon: react,
         name: "Context API",
-         color: "#61DAFB",
+        color: "#61DAFB",
       },
       {
         icon: react_icons,
@@ -284,6 +290,8 @@ export const projectData = [
       "🔉 Audio visualizations",
     ],
   },
+
+  // tic tac toe
   {
     title: "Tic Tac Toe",
     description:
@@ -331,7 +339,7 @@ export const projectData = [
       {
         icon: css,
         name: "CSS3",
-         color: "#1572B6",
+        color: "#1572B6",
       },
     ],
     video: ticTacVid,
@@ -343,6 +351,8 @@ export const projectData = [
       "🛜 Multiplayer Online Mode (with WebSockets or Firebase)",
     ],
   },
+
+  // century AI
   {
     title: "Century AI",
     description:
@@ -385,22 +395,22 @@ export const projectData = [
       {
         icon: react,
         name: "React js",
-         color: "#61DAFB",
+        color: "#61DAFB",
       },
       {
         icon: react_router,
         name: "React Router DOM",
-         color: "#d0021b",
+        color: "#d0021b",
       },
       {
         icon: react,
         name: "Context API",
-         color: "#61DAFB",
+        color: "#61DAFB",
       },
       {
         icon: react_icons,
         name: "React Icons",
-         color: "#e91e63",
+        color: "#e91e63",
       },
       {
         icon: firebase,
@@ -435,6 +445,8 @@ export const projectData = [
       "☝🏼 Model selection (e.g., Gemini Pro, Claude, etc.)",
     ],
   },
+
+  // uta AI
   {
     title: "Uta - Chatbot",
     description:
@@ -465,18 +477,18 @@ export const projectData = [
       {
         ul: "🧠 Stateless Mode ",
         li: "Optionally designed to not save chat history, refreshing the page resets the conversation.",
-      }
+      },
     ],
     technology_used: [
       {
         icon: react,
         name: "React js",
-         color: "#61DAFB",
+        color: "#61DAFB",
       },
       {
         icon: react_icons,
         name: "React Icons",
-         color: "#e91e63",
+        color: "#e91e63",
       },
       {
         icon: tailwind_css,
@@ -489,7 +501,7 @@ export const projectData = [
         name: "Gemini API",
         link: "https://ai.google.dev/gemini-api/docs",
         text: "Used to generate AI responses based on user prompts. Model: gemini-2.0-flash",
-      }
+      },
     ],
     video: utaVid,
     img: uta,

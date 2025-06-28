@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import uta_ai from "../../../assets/uta-ai.jpg";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaXmark } from "react-icons/fa6";
@@ -7,16 +7,18 @@ import ChatForm from "./ChatForm";
 import ChatMessage from "./ChatMessage";
 
 const Chatbot = () => {
-  const [showChatbot, setShowChatbot] = useState(false);
-  const [animating, setAnimating] = useState(false);
 
+  const [showChatbot, setShowChatbot] = useState(false); // show / hide chatbot
+  const [animating, setAnimating] = useState(false); // animation from a img to a 'X' icon
+ 
   const [input, setInput] = useState("");
-  const [chatHistory, setChatHistory] = useState([]);
+  const [chatHistory, setChatHistory] = useState([]); // saves the chat messages
 
-  const [loading, setLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState(false);
+  const [loading, setLoading] = useState(false); // chatbot is thinking
+  const [errorMsg, setErrorMsg] = useState(false); // error occurred
 
   const handleToggle = () => {
+
     if (animating) return; // prevent double-clicking during animation
 
     setAnimating(true);
@@ -24,16 +26,19 @@ const Chatbot = () => {
     setTimeout(() => {
       setShowChatbot(!showChatbot);
       setAnimating(false);
-    }, 100); 
+    }, 100);
   };
 
   return (
     <>
+
+    {/* button to toggle chatbot */}
       <div
-      title="Chat with Uta"
+        title="Chat with Uta"
         onClick={handleToggle}
-        className="card-shadow fixed right-2 md:right-10 bottom-20 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#ec979e]"
+        className="card-shadow fixed right-2 bottom-20 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#ec979e] md:right-10"
       >
+
         {/* Image (Uta) */}
         <img
           src={uta_ai}
@@ -47,73 +52,96 @@ const Chatbot = () => {
         />
       </div>
 
+      {/* chatbot component */}
       <div
-        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed right-0  bottom-20 sm:right-12 md:right-20 sm:bottom-20 flex h-full max-h-120 md:max-h-170 lg:max-h-140 w-80 sm:w-100 origin-bottom-right flex-col justify-between rounded-lg`}
+        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed right-0 bottom-20 flex h-full max-h-120 w-80 origin-bottom-right flex-col justify-between rounded-lg sm:right-12 sm:bottom-20 sm:w-100 md:right-20 md:max-h-170 lg:max-h-140`}
       >
+
         {/* chatbot header */}
-        <div className="flex items-center px-6 py-3 dark:border-b-0 border-b border-subtext-dark dark:bg-transparent bg-light-gray justify-between">
+        <div className="border-subtext-dark bg-light-gray flex items-center justify-between border-b px-6 py-3 dark:border-b-0 dark:bg-transparent">
+
           <div className="flex items-center gap-4">
             <img
-              className="card-shadow h-10 w-10 sm:h-12 sm:w-12 rounded-full"
+              className="card-shadow h-10 w-10 rounded-full sm:h-12 sm:w-12"
               src={uta_ai}
               alt="Uta AI"
             />
             <h2 className="sm:text-lg">Uta - Chatbot</h2>
           </div>
+
+          {/* hide chatbot */}
           <button aria-label="Collapse Chatbot">
             <IoIosArrowDown
               onClick={handleToggle}
               className="cursor-pointer text-xl"
             />
           </button>
+
         </div>
 
         {/* chatbot body */}
-        <div className="hide-scrollbar h-full px-4 sm:px-6 overflow-y-scroll">
-          {/* ai msg */}
+        <div className="hide-scrollbar h-full overflow-y-scroll px-4 sm:px-6">
+
+          {/* initial greeting from chatbot */}
           <div className="item-center mt-4 flex gap-4">
+
             <img
               className="card-shadow h-10 w-10 rounded-full"
               src={uta_ai}
               alt="Uta AI"
             />
-            <p className="card-shadow text-sm sm:text-base text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
+
+            <p className="card-shadow text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1 text-sm sm:text-base">
               Hi👋🏼, I'm Uta. Nice to meet you!
             </p>
+
           </div>
 
-          {/* user msg */}
+          {/* ai and user messages */}
           {chatHistory?.length > 0
             ? chatHistory.map((chat, index) => (
-                <ChatMessage loading={loading} setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg} key={index} chat={chat} />
+                <ChatMessage
+                  loading={loading}
+                  setLoading={setLoading}
+                  errorMsg={errorMsg}
+                  setErrorMsg={setErrorMsg}
+                  key={index}
+                  chat={chat}
+                />
               ))
             : null}
 
-             {
-        loading && <div className="animate-pulse item-center mt-4 flex gap-4">
-          <img
-            className="card-shadow h-10 w-10 rounded-full"
-            src={uta_ai}
-            alt="Uta AI"
-          />
-          <p className=" card-shadow text-sm sm:text-base text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
-            Uta is thinking...
-          </p>
-        </div>
-    }
+            {/* loading UI */}
+          {loading && (
+            <div className="item-center mt-4 flex animate-pulse gap-4">
 
-    {
-        errorMsg && <div className="border-1 mt-4 text-sm sm:text-base max-w-[90%] border-error-dark text-error-dark px-3 py-2 rounded-lg">
-            An error occurred! Please refresh the page.
-        </div>
-    }
-        </div>
+              <img
+                className="card-shadow h-10 w-10 rounded-full"
+                src={uta_ai}
+                alt="Uta AI"
+              />
 
-       
+              <p className="card-shadow text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1 text-sm sm:text-base">
+                Uta is thinking...
+              </p>
+
+            </div>
+          )}
+
+          {/* error UI */}
+          {errorMsg && (
+            <div className="border-error-dark text-error-dark mt-4 max-w-[90%] rounded-lg border-1 px-3 py-2 text-sm sm:text-base">
+              An error occurred! Please refresh the page.
+            </div>
+          )}
+        </div>
 
         {/* prompt input */}
         <ChatForm
-        loading={loading} setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg}
+          loading={loading}
+          setLoading={setLoading}
+          errorMsg={errorMsg}
+          setErrorMsg={setErrorMsg}
           chatHistory={chatHistory}
           input={input}
           setInput={setInput}

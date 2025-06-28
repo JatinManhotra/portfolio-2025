@@ -2,26 +2,43 @@ import aboutMe from "../../assets/aboutMe.svg";
 
 const AboutMe = () => {
   return (
+
+    // about me component
     <section id="about" className="mt-20 lg:mt-40">
-      <h2 data-aos="fade-up"  className="text-center text-3xl lg:text-4xl font-bold">
+
+      {/* about me heading */}
+      <h2
+        data-aos="fade-up"
+        className="text-center text-3xl font-bold lg:text-4xl"
+      >
         About <span className="gold-text li-underline">Me</span>
       </h2>
 
-      <div className="mt-10 flex items-center flex-wrap lg:flex-nowrap overflow-x-hidden justify-between lg:px-10">
+      {/* about me data */}
+      <div className="mt-10 flex flex-wrap items-center justify-between overflow-x-hidden lg:flex-nowrap lg:px-10">
+
+        {/* about me illustration  */}
         <img
           data-aos="zoom-in"
-          className="w-[25rem] lg:w-[20rem] xl:w-[30rem] mx-auto"
+          className="mx-auto w-[25rem] lg:w-[20rem] xl:w-[30rem]"
           src={aboutMe}
           alt="About me illustration"
         />
 
-        <div className="lg:basis-[60%] text-justify subtext-color mt-10 lg:mt-0 sm:text-lg">
-          <h3 data-aos="fade-left" data-aos-delay="100" className="orange-text mb-6 text-xl lg:text-2xl">A bit about me</h3>
+        {/* about me information */}
+        <div className="subtext-color mt-10 text-justify sm:text-lg lg:mt-0 lg:basis-[60%]">
 
-          <p
-            data-aos="fade-left" data-aos-offset="250" 
-          
+          {/* a small heading */}
+          <h3
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="orange-text mb-6 text-xl lg:text-2xl"
           >
+            A bit about me
+          </h3>
+
+          {/* each paragraph appears after 100ms delay */}
+          <p data-aos="fade-left" data-aos-offset="250">
             Hi, I'm{" "}
             <span className="main-text-color font-bold">Jatin Manhotra</span>, a
             self-taught web developer with a strong interest in how things work
@@ -36,7 +53,7 @@ const AboutMe = () => {
             <br />
           </p>
 
-          <p data-aos="fade-left" data-aos-delay="100"  data-aos-offset="200" >
+          <p data-aos="fade-left" data-aos-delay="100" data-aos-offset="200">
             As a self-driven learner, I've built several projects that reflect
             my ability to work with{" "}
             <span className="main-text-color font-bold">
@@ -49,7 +66,9 @@ const AboutMe = () => {
             </span>
             .
           </p>
+
           <br />
+
           <p data-aos="fade-left" data-aos-delay="200" data-aos-offset="200">
             {" "}
             Right now, I'm looking for opportunities where I can contribute to a
@@ -60,6 +79,7 @@ const AboutMe = () => {
             </span>
             .
           </p>
+          
         </div>
       </div>
     </section>

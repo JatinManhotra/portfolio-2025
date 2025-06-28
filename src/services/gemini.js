@@ -8,6 +8,5 @@ export async function generateAiResponse(history) {
     model: "gemini-2.0-flash",
     contents: history,
   });
-//   console.log(response.text);
   return response.text
 }

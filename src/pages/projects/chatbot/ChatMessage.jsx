@@ -1,16 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import uta_ai from "../../../assets/uta-ai.jpg";
 
-const ChatMessage = ({ chat , loading, errorMsg }) => {
+const ChatMessage = ({ chat }) => {
+  const bottomRef = useRef(); 
 
-    const bottomRef = useRef();
-
-    useEffect(()=>{
-        bottomRef.current.scrollIntoView({behavior: "smooth"})
-    },[chat])
+  // scrolls to the bottom of the chat on every new message
+  useEffect(() => {
+    bottomRef.current.scrollIntoView({ behavior: "smooth" });
+  }, [chat]);
 
   return (
     <>
+
+      {/* ai response block */}
       {chat.role === "ai" && (
         <div className="item-center mt-4 flex gap-4">
           <img
@@ -18,24 +20,23 @@ const ChatMessage = ({ chat , loading, errorMsg }) => {
             src={uta_ai}
             alt="Uta AI"
           />
-          <p className="card-shadow text-sm sm:text-base text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1">
+          <p className="card-shadow text-main-light max-w-[70%] rounded-r-lg rounded-bl-lg bg-[#e8777f] px-2 py-1 text-sm sm:text-base">
             {chat.text}
           </p>
         </div>
       )}
 
+      {/* user message block */}
       {chat.role === "user" && (
         <div className="mt-4 flex justify-end">
-          <p className="bg-info-dark text-sm sm:text-base card-shadow text-main-light max-w-[70%] rounded-l-lg rounded-tr-lg px-2 py-1">
+          <p className="bg-info-dark card-shadow text-main-light max-w-[70%] rounded-l-lg rounded-tr-lg px-2 py-1 text-sm sm:text-base">
             {chat.text}
           </p>
         </div>
       )}
 
-      
-
-    <div ref={bottomRef}/>
-      
+        {/* scroll to bottom */}
+      <div ref={bottomRef} />
     </>
   );
 };

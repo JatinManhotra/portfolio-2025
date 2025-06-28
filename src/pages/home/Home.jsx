@@ -4,11 +4,10 @@ import { GrGithub } from "react-icons/gr";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Home = () => {
+
   const [dynamicText, setDynamicText] = useState({ text: "", class: "" }); // text animated with typewriter effect
 
-  const [greetingIndex, setGreetingIndex] = useState(0);
-
-  const [smallScreen, setSmallScreen] = useState(false)
+  const [greetingIndex, setGreetingIndex] = useState(0); // updates the greeting message
 
   const greetings = [
     "Hello",
@@ -47,21 +46,22 @@ const Home = () => {
     let timeout;
 
     function typeEffect() {
-      const currentWord = words[wordIndex];
-      const updatedText = currentWord.substring(0, charIndex);
-      setDynamicText({ text: updatedText, class: "stop-blinking" });
+
+      const currentWord = words[wordIndex]; // stores the whole word
+      const updatedText = currentWord.substring(0, charIndex); // stores the word letter by letter on every fetch
+      setDynamicText({ text: updatedText, class: "stop-blinking" }); // stops blinking when typing and erasing
 
       if (!isDeleting && charIndex < currentWord.length) {
         charIndex++;
-        timeout = setTimeout(typeEffect, 150);
+        timeout = setTimeout(typeEffect, 150); // adds character every 150ms until completed
       } else if (isDeleting && charIndex > 0) {
         charIndex--;
-        timeout = setTimeout(typeEffect, 80);
+        timeout = setTimeout(typeEffect, 80); // removes the word under 80ms 
       } else {
         isDeleting = !isDeleting;
-        setDynamicText((prev) => ({ ...prev, class: "" }));
+        setDynamicText((prev) => ({ ...prev, class: "" })); // shows blinking animation
         if (!isDeleting) {
-          wordIndex = (wordIndex + 1) % words.length;
+          wordIndex = (wordIndex + 1) % words.length; // shifts to next word
         }
         timeout = setTimeout(typeEffect, 1200);
       }
@@ -75,61 +75,78 @@ const Home = () => {
   // updates the greeting message every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setGreetingIndex((prev) => (prev + 1) % greetings.length);
-    }, 3000); // changes every 1.5s
+      setGreetingIndex((prev) => (prev + 1) % greetings.length); // switch to next greeting
+    }, 3000); // changes every 3s
 
     return () => clearInterval(interval);
   }, []);
 
-
-
-
-
   return (
-    <section id="home" className="flex lg:h-[calc(100dvh_-_5rem)] flex-wrap-reverse lg:flex-nowrap items-center pt-10 lg:gap-5 xl:gap-0 justify-between">
-
-
+    <section
+      id="home"
+      className="flex flex-wrap-reverse items-center justify-between pt-10 lg:h-[calc(100dvh_-_5rem)] lg:flex-nowrap lg:gap-5 xl:gap-0"
+    >
       {/* introduction and useful links */}
-      <div className="lg:pl-5 xl:pl-10 lg:basis-[48%]">
+      <div className="lg:basis-[48%] lg:pl-5 xl:pl-10">
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl pb-2 lg:leading-[4rem]">
+        {/* introduction */}
+        <h1 className="pb-2 text-3xl sm:text-4xl lg:text-5xl lg:leading-[4rem]">
+
+          {/* greeting text */}
           <span key={greetings[greetingIndex]} className="fade-slide block">
             {greetings[greetingIndex]},<br />
           </span>
+
           I'm Jatin Manhotra
         </h1>
 
+        {/* typewriter text */}
         <h2
-          className={`${dynamicText.class} ${window.innerWidth < 1024 ? "mobile" : ""} custom-caret text-xl sm:text-2xl lg:text-4xl text-deep-gold relative min-h-[2.5rem] w-fit`}
+          className={`${dynamicText.class} ${window.innerWidth < 1024 ? "mobile" : ""} custom-caret text-deep-gold relative min-h-[2.5rem] w-fit text-xl sm:text-2xl lg:text-4xl`}
         >
           {dynamicText.text}
         </h2>
 
-        <p className="text-justify mt-4 lg:mt-6 subtext-color sm:text-lg">I'm a web developer who really enjoys bringing ideas to reality. I love to take this challenge, and there's no better feeling than finally achieving it. I'm always learning new things , improving my skills, and trying to get better day-by-day. Coding makes me happy, and I'm excited to keep growing and creating more cool projects.</p>
+        {/* info about me */}
+        <p className="subtext-color mt-4 text-justify sm:text-lg lg:mt-6">
+          I'm a web developer who really enjoys bringing ideas to reality. I
+          love to take this challenge, and there's no better feeling than
+          finally achieving it. I'm always learning new things , improving my
+          skills, and trying to get better day-by-day. Coding makes me happy,
+          and I'm excited to keep growing and creating more cool projects.
+        </p>
 
-      <div className="mt-10 flex flex-col items-start sm:flex-row  gap-6"> 
+        {/* redirecting buttons */}
+        <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row">
 
-        <a href="https://github.com/JatinManhotra" target="_blank">
-          <button aria-label="Github profile" className="dark:light-btn dark-btn group custom-btn">
-          <GrGithub className="text-xl"/> My Github Profile
-          <FaArrowRightLong className="group-hover:translate-x-2" />
-          </button>
+          {/* github profile */}
+          <a href="https://github.com/JatinManhotra" target="_blank">
+            <button
+              aria-label="Github profile"
+              className="dark:light-btn dark-btn group custom-btn"
+            >
+              <GrGithub className="text-xl" /> My Github Profile
+              <FaArrowRightLong className="group-hover:translate-x-2" />
+            </button>
           </a>
 
-        <a>
-          <button aria-label="Resume" className="gold-btn group custom-btn">
-          Resume
-          </button>
-        </a>
+          {/* download resume */}
+          <a>
+            <button aria-label="Resume" className="gold-btn group custom-btn">
+              Resume
+            </button>
+          </a>
 
-      </div>
-        
+        </div>
       </div>
 
       {/* my image on the side */}
-
-      <div className="relative mx-auto ">
-        <img className="w-[30rem] xl:w-[35rem]" src={img} alt="Jatin Manhotra" />
+      <div className="relative mx-auto">
+        <img
+          className="w-[30rem] xl:w-[35rem]"
+          src={img}
+          alt="Jatin Manhotra"
+        />
       </div>
     </section>
   );

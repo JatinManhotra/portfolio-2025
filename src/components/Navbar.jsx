@@ -10,11 +10,12 @@ import { GoSun } from "react-icons/go";
 import { TbSunMoon } from "react-icons/tb";
 
 const Navbar = () => {
+
   const { dark, setDark } = useContext(MyContext);
 
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false); // toggles burger menu in small devices
 
-  const [showMoreMenu, setShowMoreMenu] = useState(false);
+  const [showMoreMenu, setShowMoreMenu] = useState(false); // toggles change theme menu in mobile devices
 
   const handleThemeToggle = (value) => {
     setDark(value);
@@ -22,20 +23,28 @@ const Navbar = () => {
   };
 
   return (
-    <section className="dark:bg-background-dark/30 bg-background-light/30 fixed top-0 right-0 left-0 z-10 flex h-14 lg:h-20 items-center justify-between px-6 backdrop-blur-md">
+
+    // Navbar component
+    <section className="dark:bg-background-dark/30 bg-background-light/30 fixed top-0 right-0 left-0 z-10 flex h-14 items-center justify-between px-6 backdrop-blur-md lg:h-20">
+
       {/* left heading */}
       <h2 className="name-tag sm:text-xl">{"<Jatin Manhotra/>"}</h2>
 
+      {/* burger menu for small devices */}
       <div className="soft-bg-gradient dark:dark-bg-gradient card-shadow card-border relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg lg:hidden">
+
+        {/* toggles between menu and cross icon */}
         {showMenu ? (
           <FaXmark onClick={() => setShowMenu(false)} className="text-2xl" />
         ) : (
           <IoIosMenu onClick={() => setShowMenu(true)} className="text-2xl" />
         )}
 
+        {/* burger menu component with links to different components */}
         <div
           className={`${showMenu ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border absolute top-10 right-0 flex w-52 origin-top-right flex-col items-start justify-between gap-2 rounded-2xl p-3`}
         >
+
           <Link
             className="w-full rounded-lg"
             activeClass="sm-active"
@@ -45,7 +54,11 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button onClick={()=>setShowMenu(false)} aria-label="Home" className="sm-menu-item">
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="Home"
+              className="sm-menu-item"
+            >
               <FaHome className="text-lg" /> Home
             </button>
           </Link>
@@ -59,7 +72,11 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button onClick={()=>setShowMenu(false)} aria-label="About" className="sm-menu-item">
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="About"
+              className="sm-menu-item"
+            >
               <IoPerson className="text-lg" /> About
             </button>
           </Link>
@@ -73,7 +90,11 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button onClick={()=>setShowMenu(false)} aria-label="Skills" className="sm-menu-item">
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="Skills"
+              className="sm-menu-item"
+            >
               <HiOutlineLightBulb className="text-lg" /> Skills
             </button>
           </Link>
@@ -87,7 +108,11 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button onClick={()=>setShowMenu(false)} aria-label="Projects" className="sm-menu-item">
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="Projects"
+              className="sm-menu-item"
+            >
               <FaCode className="text-lg" /> Projects
             </button>
           </Link>
@@ -101,20 +126,29 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button onClick={()=>setShowMenu(false)} aria-label="Contact me" className="sm-menu-item">
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="Contact me"
+              className="sm-menu-item"
+            >
               <IoMdMail className="text-lg" /> Contact me
             </button>
           </Link>
 
+          {/* theme menu component with toggleable light and dark mode */}
           <div
             onClick={() => setShowMoreMenu(!showMoreMenu)}
             aria-label="Theme"
             className="sm-menu-item relative"
           >
             <TbSunMoon className="text-lg" /> Theme
+
+            {/* light and dark mode menu */}
             <div
               className={`${showMoreMenu ? "pointer-events-auto scale-100" : "pointer-events-none scale-0"} card-shadow card-border soft-bg-gradient dark:dark-bg-gradient absolute top-8 right-0 flex w-30 origin-top flex-col items-start gap-3 rounded-lg p-3`}
             >
+
+              {/* light mode */}
               <button
                 onClick={() => handleThemeToggle(false)}
                 className={`${dark === false ? "gold-text" : ""} flex cursor-pointer items-center gap-4`}
@@ -122,7 +156,10 @@ const Navbar = () => {
                 <GoSun className="text-lg" /> Light
               </button>
 
+              {/* bar to separate the buttons */}
               <div className="bg-main-light/50 dark:bg-main-dark/50 h-[.0063rem] w-full" />
+
+              {/* dark mode */}
               <button
                 onClick={() => handleThemeToggle(true)}
                 className={`${dark === true ? "gold-text" : ""} flex cursor-pointer items-center gap-4`}
@@ -130,13 +167,14 @@ const Navbar = () => {
                 <IoMoon className="text-lg" /> Dark
               </button>
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* middle links */}
+      {/* middle navigation links for large devices*/}
+      <ul className="hidden items-center gap-10 lg:flex">
 
-      <ul className="lg:flex hidden items-center gap-10">
         <Link
           activeClass="active"
           to="home"
@@ -183,7 +221,8 @@ const Navbar = () => {
       </ul>
 
       {/* contact me btn */}
-      <div className="hidden lg:flex items-center gap-10">
+      <div className="hidden items-center gap-10 lg:flex">
+
         <Link
           activeClass="not_active"
           to="contact"
@@ -192,32 +231,41 @@ const Navbar = () => {
           offset={-100}
           duration={500}
         >
-          <button aria-label="Contact me" className="group dark-btn dark:light-btn custom-btn rounded-full">
+          <button
+            aria-label="Contact me"
+            className="group dark-btn dark:light-btn custom-btn rounded-full"
+          >
             <IoMdMail className="text-lg" /> Contact me
             <FaArrowRightLong className="group-hover:translate-x-2" />
           </button>
+
         </Link>
 
-       
-        <div className="border-gold card-shadow  flex items-center gap-1 rounded-full border-2 p-1">
+        {/* light and dark mode toggler switch */}
+        <div className="border-gold card-shadow flex items-center gap-1 rounded-full border-2 p-1">
+          
+          {/* light mode */}
           <div
             onClick={() => handleThemeToggle(false)}
             className={`${
               !dark ? "gold-btn" : ""
-            } flex h-6 w-6 cursor-pointer  items-center justify-center rounded-full`}
+            } flex h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
           >
             <IoMdSunny />
           </div>
 
+            {/* dark mode */}
           <div
             onClick={() => handleThemeToggle(true)}
             className={`${
               dark ? "gold-btn" : ""
-            } flex h-6 w-6 cursor-pointer  items-center justify-center rounded-full`}
+            } flex h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
           >
             <FaMoon className="text-sm" />
           </div>
+          
         </div>
+
       </div>
     </section>
   );

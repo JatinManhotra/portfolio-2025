@@ -7,6 +7,7 @@
   src: url(assets/Poppins-Regular.ttf);
 }
 
+/* extending theme */
 @theme {
   --color-main-light: #111827;
   --color-main-dark: #f1f5f9;
@@ -41,6 +42,7 @@
   --color-shadow-dark: rgba(0, 0, 0, 0.3);
 }
 
+/* custom utility classes */
 @utility gold-text{
   @apply text-deep-gold dark:text-gold
 }
@@ -104,7 +106,6 @@
   }
 }
 
-/* Use for: section backgrounds, headers, or card containers. */
 @utility soft-bg-gradient {
   background: linear-gradient(to bottom right, #f9fafb, #e5e7eb);
 }
@@ -121,8 +122,6 @@
   );
 }
 
-/* For Buttons or Icons on Hover */
-/* Apply this to buttons, icons, or even city cards to give an interactive feel. */
 @utility glow-hover {
   box-shadow: 0 0 4px var(--color-gold);
 }
@@ -139,6 +138,7 @@
   @apply bg-error/10 text-error border-error rounded border-l-4 px-4 py-2;
 }
 
+/* custom components classes */
 @layer components {
   .li-hover {
     @apply hover:gold-text cursor-pointer transition-all duration-100 ease-in;
@@ -156,6 +156,7 @@
 
 /* styles to make the autofill content respective to the theme */
 @layer utilities {
+
   /* Light mode autofill */
   input:-webkit-autofill {
     -webkit-text-fill-color: #111827 !important;
@@ -167,10 +168,11 @@
   .dark input:-webkit-autofill {
     -webkit-text-fill-color: #f1f5f9 !important;
     transition: background-color 9999s ease-in-out 0s;
-    -webkit-box-shadow: 0 0 0px 1000px #191a1b inset; /* match dark bg (like bg-gray-800) */
+    -webkit-box-shadow: 0 0 0px 1000px #191a1b inset; /* match dark bg */
   }
 }
 
+/* light mode selection */
 ::selection {
   background: var(--color-info-dark);
   color: white;
@@ -182,14 +184,16 @@ html.dark ::selection {
   color: #000;
 }
 
+/* global styles */
 * {
   box-sizing: border-box;
   font-family:
     poppins, "Times New Roman", Times, serif, "Segoe UI", Tahoma, Geneva,
     Verdana, sans-serif;
-  transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in; /* smooth animation */
 }
 
+/* hide scrollbar */
 html::-webkit-scrollbar {
   display: none;
 }
@@ -204,6 +208,7 @@ body {
   font-family: cursive;
 }
 
+/* underline for light and dark mode */
 .li-underline {
   position: relative;
 }
@@ -230,6 +235,7 @@ html.dark .li-underline::before {
   transform: scaleX(1);
 }
 
+/* active class for the navbar */
 .active{
   color: var(--color-deep-gold);
   text-decoration: underline;
@@ -251,6 +257,7 @@ html.dark .active{
   color: var(--color-gold);
 }
 
+/* custom caret for typewriter effect */
 .custom-caret::before {
   content: "";
   top: 50%;
@@ -272,6 +279,52 @@ html.dark .active{
   animation: none;
 }
 
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* confetti cursor */
+.confetti {
+  position: fixed;
+  width: 0.125rem;
+  height: 0.125rem;
+  border-radius: 100%;
+  animation: 700ms fall ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* transitions and animations */
+.fade-slide {
+  animation: fadeSlide 0.5s ease-in-out;
+}
+
+.icon-text-slide {
+  transition: all 0.3s ease-in !important;
+}
+
+.msg-width {
+  transition: all 5s ease-in !important;
+}
+
+.animate-left {
+  animation: animate-left 1s normal;
+}
+
+.animate-right {
+  animation: animate-right 1s normal;
+}
+
+.scale-up {
+  animation: scale-up 0.2s normal;
+}
+
+.animate-opacity {
+  animation: animate-opacity 0.2s normal;
+}
+
+/* keyframes */
 @keyframes blink {
   50% {
     opacity: 0;
@@ -287,33 +340,6 @@ html.dark .active{
     opacity: 1;
     transform: translateY(0px);
   }
-}
-
-.fade-slide {
-  animation: fadeSlide 0.5s ease-in-out;
-}
-
-.icon-text-slide {
-  transition: all 0.3s ease-in !important;
-}
-
-.msg-width {
-  transition: all 5s ease-in !important;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.confetti {
-  position: fixed;
-  width: 0.125rem;
-  height: 0.125rem;
-  border-radius: 100%;
-  animation: 700ms fall ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 9999;
 }
 
 @keyframes fall {
@@ -337,10 +363,6 @@ html.dark .active{
   }
 }
 
-.animate-left {
-  animation: animate-left 1s normal;
-}
-
 @keyframes animate-right {
   from {
     transform: translateX(-25%);
@@ -352,10 +374,6 @@ html.dark .active{
   }
 }
 
-.animate-right {
-  animation: animate-right 1s normal;
-}
-
 @keyframes scale-up {
   from {
     transform: scale(0.2);
@@ -365,10 +383,6 @@ html.dark .active{
   }
 }
 
-.scale-up {
-  animation: scale-up 0.2s normal;
-}
-
 @keyframes animate-opacity {
   from {
     opacity: 0;
@@ -376,8 +390,4 @@ html.dark .active{
   to {
     opacity: 1;
   }
-}
-
-.animate-opacity {
-  animation: animate-opacity 0.2s normal;
 }

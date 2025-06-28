@@ -4,9 +4,13 @@ import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 
 const Socials = () => {
   return (
+
+    // aside component for my socials links
     <aside className="fixed top-0 bottom-0 left-0 hidden w-12 flex-col items-center justify-end gap-10 text-2xl md:flex">
+
       {/* social media links */}
       <div className="flex flex-col items-center gap-4">
+
         <div className="group cursor-pointer">
           <a href="https://github.com/JatinManhotra" target="_blank">
             <RiGithubLine className="block group-hover:hidden" />
@@ -41,8 +45,10 @@ const Socials = () => {
             <FaLinkedin className="hidden group-hover:block" />
           </a>
         </div>
+
       </div>
 
+      {/* golden bar at the bottom */}
       <div className="gold-gradient h-20 w-1"></div>
     </aside>
   );

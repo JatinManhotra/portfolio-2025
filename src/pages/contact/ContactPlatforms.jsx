@@ -5,7 +5,9 @@ import github from "../../assets/icons/github.svg";
 
 const ContactPlatforms = () => {
   return (
-    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 xl:flex-nowrap sm:gap-10">
+    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 xl:flex-nowrap">
+
+      {/* whatsapp button */}
       <div
         data-aos="fade-right"
         onClick={() =>
@@ -17,13 +19,14 @@ const ContactPlatforms = () => {
         className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#2dea55]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#2dea55]/50"
       >
         <img
-          className="w-9 xl:grayscale-100 group-hover:grayscale-0 sm:w-10"
+          className="w-9 group-hover:grayscale-0 sm:w-10 xl:grayscale-100"
           src={whatsapp}
           alt="Whatsapp"
         />
         <p className="text-sm sm:text-lg">WhatsApp</p>
       </div>
 
+        {/* instagram button */}
       <a
         href="https://www.instagram.com/manhotra.31/"
         target="_blank"
@@ -32,7 +35,7 @@ const ContactPlatforms = () => {
         className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#c3427b]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#c3427b]/50"
       >
         <img
-          className="w-9 xl:grayscale-100 group-hover:grayscale-0 sm:w-10"
+          className="w-9 group-hover:grayscale-0 sm:w-10 xl:grayscale-100"
           src={instagram}
           alt="Whatsapp"
         />
@@ -40,6 +43,7 @@ const ContactPlatforms = () => {
         <p className="text-sm sm:text-lg">Instagram</p>
       </a>
 
+        {/* linkedin button */}
       <a
         href="https://www.linkedin.com/in/jatin-manhotra-5b474a347/"
         target="_blank"
@@ -48,13 +52,14 @@ const ContactPlatforms = () => {
         className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#0078d4]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#0078d4]/50"
       >
         <img
-          className="w-10 xl:grayscale-100 group-hover:grayscale-0"
+          className="w-10 group-hover:grayscale-0 xl:grayscale-100"
           src={linkedin}
           alt="Whatsapp"
         />
         <p className="text-sm sm:text-lg">Linkedin</p>
       </a>
 
+        {/* github button */}
       <a
         href="https://github.com/JatinManhotra"
         target="_blank"
@@ -63,12 +68,13 @@ const ContactPlatforms = () => {
         className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#0078d4]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#0078d4]/50"
       >
         <img
-          className="w-10 xl:grayscale-100 group-hover:grayscale-0"
+          className="w-10 group-hover:grayscale-0 xl:grayscale-100"
           src={github}
           alt="Whatsapp"
         />
         <p className="text-sm sm:text-lg">Github</p>
       </a>
+      
     </div>
   );
 };

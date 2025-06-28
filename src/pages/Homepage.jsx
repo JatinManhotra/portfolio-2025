@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import Email from "../components/Email";
 import Navbar from "../components/Navbar";
 import Socials from "../components/Socials";
@@ -14,13 +13,15 @@ import Clock from "../components/Clock";
 import Chatbot from "../pages/projects/chatbot/Chatbot";
 
 const Homepage = () => {
-
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
-  function handleScrollPercentage() {
-    const howMuchScrolled =
+  function handleScrollPercentage() { 
+
+    // how much user scrolled from top
+    const howMuchScrolled = 
       document.body.scrollTop || document.documentElement.scrollTop;
 
+    // content height visible to the user's screen
     const height =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
@@ -28,6 +29,7 @@ const Homepage = () => {
     setScrollPercentage((howMuchScrolled / height) * 100);
   }
 
+  // listens on page reload
   useEffect(() => {
     window.addEventListener("scroll", handleScrollPercentage);
 
@@ -70,12 +72,12 @@ const Homepage = () => {
         <section className="w-full">
           <div className="bg-subtext-light/50 dark:bg-subtext-dark/50 mx-auto mb-6 h-0.5 w-[85%]" />
 
-          <div className="subtext-color flex text-sm sm:text-base items-center gap-1 sm:gap-0  flex-col sm:flex-row justify-center">
+          <div className="subtext-color flex flex-col items-center justify-center gap-1 text-sm sm:flex-row sm:gap-0 sm:text-base">
             <span className="mr-4">© 2025 - All Rights Reserved.</span>
 
             <span className="hidden sm:block"> | </span>
 
-            <span className="sm:ml-4 flex items-center gap-2">
+            <span className="flex items-center gap-2 sm:ml-4">
               Made with <FaHeart className="text-rose-500" /> by{" "}
               <a
                 className="hover:font-bold dark:hover:text-white"
