@@ -51,7 +51,7 @@ const Homepage = () => {
       <main>
         <Socials />
 
-        <section className="mx-auto mt-22 w-full max-w-[91%]">
+        <section className="mx-auto mt-22 w-full max-w-[91%] md:max-w-[85%] lg:max-w-[91%]">
           <Home />
           <RandomFacts />
           <AboutMe />
@@ -68,7 +68,7 @@ const Homepage = () => {
 
       <footer className="dark-color mt-6 flex h-20 w-full items-center justify-center">
         <section className="w-full">
-          <div className="bg-subtext-light dark:bg-subtext-dark mx-auto mb-6 h-0.5 w-[85%]" />
+          <div className="bg-subtext-light/50 dark:bg-subtext-dark/50 mx-auto mb-6 h-0.5 w-[85%]" />
 
           <div className="subtext-color flex text-sm sm:text-base items-center gap-1 sm:gap-0  flex-col sm:flex-row justify-center">
             <span className="mr-4">© 2025 - All Rights Reserved.</span>

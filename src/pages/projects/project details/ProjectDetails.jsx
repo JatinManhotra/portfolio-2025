@@ -31,7 +31,7 @@ const ProjectDetails = () => {
 
   return (
     <>
-      <section className="mx-auto mt-10 w-full max-w-[91%] sm:max-w-[85%] text-justify">
+      <section className="mx-auto mt-10 w-full overflow-hidden max-w-[91%] xl:max-w-[85%] text-justify">
         <div className="flex items-center gap-10">
           <button
             aria-label="Navigate left"
@@ -47,10 +47,10 @@ const ProjectDetails = () => {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="animate-right">
             <div>
-              <h1 className="mb-4 text-xl sm:text-4xl font-bold">{project.title}</h1>
+              <h1 className="mb-4 text-xl sm:text-3xl lg:text-4xl font-bold">{project.title}</h1>
               <p className="subtext-color mb-6 sm:text-lg">
                 {project.description}
               </p>
@@ -58,7 +58,7 @@ const ProjectDetails = () => {
 
             <TechAndFeatures project={project} />
 
-            <div className="my-10 flex items-center gap-6">
+            <div className="my-10 flex flex-wrap sm:flex-nowrap items-center gap-6">
               {project?.live_demo && (
                 <a href={project.live_demo} target="_blank">
                   <button
@@ -93,7 +93,7 @@ const ProjectDetails = () => {
               </video>
             </div>
 
-            <div className="border-deep-gold dark:border-gold/50 card-shadow dark-bg-gradient mt-10 rounded-xl border-1 p-3 sm:p-6">
+            <div className="border-deep-gold dark:border-gold/50 card-shadow soft-bg-gradient dark:dark-bg-gradient mt-10 rounded-xl border-1 p-3 sm:p-6">
               <h2 className="mb-4 flex items-center gap-4 text-xl sm:text-2xl font-semibold">
                 <FaRegStar className="gold-text" /> Key Features
               </h2>
@@ -113,7 +113,7 @@ const ProjectDetails = () => {
 
       <footer className="dark-color mt-6 flex text-sm sm:text-base h-20 w-full items-center justify-center">
         <div className="w-full">
-          <div className="bg-subtext-light dark:bg-subtext-dark mx-auto mb-6 h-0.5 w-[85%]" />
+          <div className="bg-subtext-light/50 dark:bg-subtext-dark/50 mx-auto mb-6 h-0.5 w-[85%]" />
           <span className="subtext-color block text-center">
             © 2025 - All Rights Reserved.
           </span>

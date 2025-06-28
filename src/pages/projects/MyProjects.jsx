@@ -48,7 +48,7 @@ const MyProjects = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmall(window.innerWidth < 640);
+      setIsSmall(window.innerWidth < 1024);
     };
 
     handleResize();
@@ -70,8 +70,8 @@ const MyProjects = () => {
   }, []);
 
   return (
-    <section id="projects" className="mt-40">
-      <h1 data-aos="fade-up" className="text-3xl sm:text-4xl text-center font-bold">
+    <section id="projects" className="mt-20 lg:mt-40">
+      <h1 data-aos="fade-up" className="text-3xl lg:text-4xl text-center font-bold">
         My <span className="gold-text li-underline">Projects</span>
       </h1>
 
@@ -87,24 +87,24 @@ const MyProjects = () => {
         page
       </h3>
 
-      <div data-aos="fade-up" data-aos-offset="250" className="flex items-center justify-between sm:px-3">
+      <div data-aos="fade-up" data-aos-offset="250" className="flex items-center justify-between lg:px-3">
         <div
           onClick={handlePrev}
-          className="w-15 h-15 rounded-full cursor-pointer hidden  sm:flex items-center justify-center gold-btn"
+          className="w-15 h-15 rounded-full card-shadow cursor-pointer hidden  sm:flex items-center justify-center gold-btn"
         >
           <FaArrowLeft className="text-2xl " />
         </div>
 
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto py-3 hide-scrollbar sm:max-w-[85%] w-full snap-x snap-mandatory scroll-smooth"
+          className="flex overflow-x-auto py-3 hide-scrollbar sm:max-w-[70%] lg:max-w-[85%] w-full snap-x snap-mandatory scroll-smooth"
         >
           {groupedProjects.map((group, index) => (
             <div
               key={index}
               className={`flex-shrink-0 w-full snap-start grid ${
                 isSmall ? "grid-cols-1" : "grid-cols-2"
-              } gap-6 px-2 sm:px-4`}
+              } gap-6 px-2 lg:px-4`}
             >
               {group.map((item, i) =>
                 item === "view-all" ? (
@@ -119,7 +119,7 @@ const MyProjects = () => {
 
         <div
           onClick={handleNext}
-          className="w-15 h-15 rounded-full  cursor-pointer  hidden sm:flex items-center justify-center gold-btn"
+          className="w-15 h-15 rounded-full card-shadow cursor-pointer  hidden sm:flex items-center justify-center gold-btn"
         >
           <FaArrowRight className="text-2xl " />
         </div>

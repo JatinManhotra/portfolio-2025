@@ -110,7 +110,7 @@ export const projectData = [
     description:
       "A responsive React-based weather dashboard that lets users search any city and view real-time weather, 3-day and hourly forecasts, and interact with a Leaflet map displaying saved locations. Features include dark mode, persistent storage via localStorage, and smooth client-side routing using React Router.",
     short_description:
-      "A responsive React-based weather dashboard that lets users search any city and view real-time weather, 3-day and hourly forecasts, and interact with a Leaflet map displaying saved locations.",
+      "A responsive React-based weather dashboard that lets users search any city and view real-time weather and interact with a map.",
     live_demo: "https://jatinmanhotra.github.io/react-weather-app/#/dashboard",
     github_page: "https://github.com/JatinManhotra/react-weather-app",
     key_features: [

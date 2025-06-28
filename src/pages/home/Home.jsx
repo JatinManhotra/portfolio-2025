@@ -8,6 +8,8 @@ const Home = () => {
 
   const [greetingIndex, setGreetingIndex] = useState(0);
 
+  const [smallScreen, setSmallScreen] = useState(false)
+
   const greetings = [
     "Hello",
     "Hola",
@@ -79,14 +81,18 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+
+
+
   return (
-    <section id="home" className="flex sm:h-[calc(100dvh_-_5rem)] flex-wrap-reverse sm:flex-nowrap items-center pt-10 justify-between">
+    <section id="home" className="flex lg:h-[calc(100dvh_-_5rem)] flex-wrap-reverse lg:flex-nowrap items-center pt-10 lg:gap-5 xl:gap-0 justify-between">
 
 
       {/* introduction and useful links */}
-      <div className="sm:pl-10 sm:basis-[48%]">
+      <div className="lg:pl-5 xl:pl-10 lg:basis-[48%]">
 
-        <h1 className="text-3xl sm:text-5xl pb-2 sm:leading-[4rem]">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl pb-2 lg:leading-[4rem]">
           <span key={greetings[greetingIndex]} className="fade-slide block">
             {greetings[greetingIndex]},<br />
           </span>
@@ -94,14 +100,14 @@ const Home = () => {
         </h1>
 
         <h2
-          className={`${dynamicText.class} mobile custom-caret text-xl sm:text-4xl text-deep-gold relative min-h-[2.5rem] w-fit`}
+          className={`${dynamicText.class} ${window.innerWidth < 1024 ? "mobile" : ""} custom-caret text-xl sm:text-2xl lg:text-4xl text-deep-gold relative min-h-[2.5rem] w-fit`}
         >
           {dynamicText.text}
         </h2>
 
-        <p className="text-justify mt-4 sm:mt-6 subtext-color sm:text-lg">I'm a web developer who really enjoys bringing ideas to reality. I love to take this challenge, and there's no better feeling than finally achieving it. I'm always learning new things , improving my skills, and trying to get better day-by-day. Coding makes me happy, and I'm excited to keep growing and creating more cool projects.</p>
+        <p className="text-justify mt-4 lg:mt-6 subtext-color sm:text-lg">I'm a web developer who really enjoys bringing ideas to reality. I love to take this challenge, and there's no better feeling than finally achieving it. I'm always learning new things , improving my skills, and trying to get better day-by-day. Coding makes me happy, and I'm excited to keep growing and creating more cool projects.</p>
 
-      <div className="mt-10 flex flex-col items-start sm:flex-row sm:items-center gap-6"> 
+      <div className="mt-10 flex flex-col items-start sm:flex-row  gap-6"> 
 
         <a href="https://github.com/JatinManhotra" target="_blank">
           <button aria-label="Github profile" className="dark:light-btn dark-btn group custom-btn">
@@ -122,8 +128,8 @@ const Home = () => {
 
       {/* my image on the side */}
 
-      <div className="relative">
-        <img className="w-[35rem]  relative" src={img} alt="Jatin Manhotra" />
+      <div className="relative mx-auto ">
+        <img className="w-[30rem] xl:w-[35rem]" src={img} alt="Jatin Manhotra" />
       </div>
     </section>
   );

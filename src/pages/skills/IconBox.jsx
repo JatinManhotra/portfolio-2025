@@ -1,6 +1,6 @@
 const IconBox = ({icon, color, text}) => {
   return (
-    <div className="group relative h-25">
+    <div className="group relative h-25 sm:h-30">
   <div
    style={{
   filter: `drop-shadow(0 0 6px ${color})`
@@ -13,7 +13,7 @@ const IconBox = ({icon, color, text}) => {
     />
   </div>
 
-  <p className="absolute mt-4 sm:mt-0 text-sm sm:text-base w-30 text-center sm:w-fit sm:whitespace-nowrap  left-[50%] translate-x-[-50%] main-text-color transition-all duration-300 group-hover:translate-y-2 group-hover:opacity-100 sm:-translate-y-2 sm:opacity-0">
+  <p className="absolute mt-4 xl:mt-0 text-sm sm:text-base w-30 text-center xl:w-fit xl:whitespace-nowrap  left-[50%] translate-x-[-50%] main-text-color transition-all duration-300 group-hover:translate-y-2 group-hover:opacity-100 xl:-translate-y-2 xl:opacity-0">
     {text}
   </p>
 </div>

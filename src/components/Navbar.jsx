@@ -22,11 +22,11 @@ const Navbar = () => {
   };
 
   return (
-    <section className="dark:bg-background-dark/30 bg-background-light/30 fixed top-0 right-0 left-0 z-10 flex h-20 items-center justify-between px-6 backdrop-blur-md">
+    <section className="dark:bg-background-dark/30 bg-background-light/30 fixed top-0 right-0 left-0 z-10 flex h-14 lg:h-20 items-center justify-between px-6 backdrop-blur-md">
       {/* left heading */}
       <h2 className="name-tag sm:text-xl">{"<Jatin Manhotra/>"}</h2>
 
-      <div className="soft-bg-gradient dark:dark-bg-gradient card-shadow card-border relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg sm:hidden">
+      <div className="soft-bg-gradient dark:dark-bg-gradient card-shadow card-border relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg lg:hidden">
         {showMenu ? (
           <FaXmark onClick={() => setShowMenu(false)} className="text-2xl" />
         ) : (
@@ -45,7 +45,7 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button aria-label="Home" className="sm-menu-item">
+            <button onClick={()=>setShowMenu(false)} aria-label="Home" className="sm-menu-item">
               <FaHome className="text-lg" /> Home
             </button>
           </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button aria-label="About" className="sm-menu-item">
+            <button onClick={()=>setShowMenu(false)} aria-label="About" className="sm-menu-item">
               <IoPerson className="text-lg" /> About
             </button>
           </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button aria-label="Skills" className="sm-menu-item">
+            <button onClick={()=>setShowMenu(false)} aria-label="Skills" className="sm-menu-item">
               <HiOutlineLightBulb className="text-lg" /> Skills
             </button>
           </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button aria-label="Projects" className="sm-menu-item">
+            <button onClick={()=>setShowMenu(false)} aria-label="Projects" className="sm-menu-item">
               <FaCode className="text-lg" /> Projects
             </button>
           </Link>
@@ -101,12 +101,12 @@ const Navbar = () => {
             offset={-100}
             duration={500}
           >
-            <button aria-label="Contact me" className="sm-menu-item">
+            <button onClick={()=>setShowMenu(false)} aria-label="Contact me" className="sm-menu-item">
               <IoMdMail className="text-lg" /> Contact me
             </button>
           </Link>
 
-          <button
+          <div
             onClick={() => setShowMoreMenu(!showMoreMenu)}
             aria-label="Theme"
             className="sm-menu-item relative"
@@ -130,13 +130,13 @@ const Navbar = () => {
                 <IoMoon className="text-lg" /> Dark
               </button>
             </div>
-          </button>
+          </div>
         </div>
       </div>
 
       {/* middle links */}
 
-      {/* <ul className="flex items-center gap-10">
+      <ul className="lg:flex hidden items-center gap-10">
         <Link
           activeClass="active"
           to="home"
@@ -180,10 +180,10 @@ const Navbar = () => {
         >
           <li className="li-hover li-underline">Projects</li>
         </Link>
-      </ul> */}
+      </ul>
 
       {/* contact me btn */}
-      {/* <div className="flex items-center gap-10">
+      <div className="hidden lg:flex items-center gap-10">
         <Link
           activeClass="not_active"
           to="contact"
@@ -199,12 +199,12 @@ const Navbar = () => {
         </Link>
 
        
-        <div className="border-gold  flex items-center gap-1 rounded-full border-2 p-1">
+        <div className="border-gold card-shadow  flex items-center gap-1 rounded-full border-2 p-1">
           <div
             onClick={() => handleThemeToggle(false)}
             className={`${
               !dark ? "gold-btn" : ""
-            } flex h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
+            } flex h-6 w-6 cursor-pointer  items-center justify-center rounded-full`}
           >
             <IoMdSunny />
           </div>
@@ -213,12 +213,12 @@ const Navbar = () => {
             onClick={() => handleThemeToggle(true)}
             className={`${
               dark ? "gold-btn" : ""
-            } flex h-6 w-6 cursor-pointer items-center justify-center rounded-full`}
+            } flex h-6 w-6 cursor-pointer  items-center justify-center rounded-full`}
           >
             <FaMoon className="text-sm" />
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };

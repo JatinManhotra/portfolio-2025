@@ -13,7 +13,7 @@ const TechApiIdeas = ({project}) => {
           <FaCode className=" gold-text " /> Technologies and Libraries Used
         </h2>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-10">
+        <div className="mt-10 flex sm:gap-y-15 flex-wrap  items-center justify-center gap-10">
           {project.technology_used.map((tech, index) => (
             <IconBox key={index} icon={tech.icon} color={tech.color} text={tech.name} />
           ))}
@@ -37,7 +37,7 @@ const TechApiIdeas = ({project}) => {
         </ul>
       </div>}
 
-      <div className="my-20">
+      <div>
         <h2 className="mb-4 flex items-center gap-4 text-xl sm:text-2xl font-semibold">
           <HiOutlineLightBulb className=" gold-text  text-3xl" /> What's Next /
           Future Ideas

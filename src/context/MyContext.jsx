@@ -49,7 +49,7 @@ const MyContextProvider = ({ children }) => {
   // confetti cursor
   useEffect(() => {
     function customCursor(event) {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 1; i++) {
         const confetti = document.createElement("div");
         confetti.classList.add("confetti");
         document.body.appendChild(confetti);

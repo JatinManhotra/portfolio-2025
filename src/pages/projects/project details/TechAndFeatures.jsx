@@ -17,7 +17,7 @@ const TechAndFeatures = ({project}) => {
         </div>
       </div>
 
-      <div className="hover:border-info-dark border-info dark:border-info-dark/50 flex w-full scale-100 items-center gap-3 sm:gap-4 rounded-lg border-1 px-3 sm:px-4 py-5 hover:scale-[1.02]">
+      <div className="hover:border-info-dark border-info dark:border-info-dark/50 flex w-full scale-100 items-center gap-3 sm:gap-4 rounded-lg border-1 px-3 sm:px-4 py-3 hover:scale-[1.02]">
 
         <div className="bg-info-dark flex sm:h-8 sm:w-8 h-7 w-7 items-center justify-center rounded-full">
           <FaRegStar className="text-main-light sm:text-xl" />

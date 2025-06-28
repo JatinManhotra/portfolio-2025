@@ -1,9 +1,9 @@
 const Email = () => {
   return (
-    <aside className="fixed hidden sm:block pointer-events-none bottom-0 left-0 right-12 rotate-90 py-3  origin-bottom-right ">
-      <div className="flex gap-8 items-center justify-end">
+    <aside className="pointer-events-none fixed right-12 bottom-0 left-0 hidden origin-bottom-right rotate-90 py-3 md:block">
+      <div className="flex items-center justify-end gap-8">
         <p>jatinmanhotra31@gmail.com</p>
-        <div className="w-20 h-1 gold-gradient"></div>
+        <div className="gold-gradient h-1 w-20"></div>
       </div>
     </aside>
   );

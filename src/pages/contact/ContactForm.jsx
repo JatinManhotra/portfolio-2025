@@ -171,12 +171,12 @@ const ContactForm = ({
   return (
     <form
       onSubmit={(event) => validateForm(event)}
-      className="w-full flex-1 px-3 xl:px-8"
+      className="w-full flex-1 px-3 sm:px-8"
     >
       <div>
         <label
           htmlFor="name"
-          className="mb-2 block text-xs font-medium text-black xl:text-sm dark:text-white"
+          className="mb-2 block text-xs font-medium text-black sm:text-sm dark:text-white"
         >
           Name
         </label>
@@ -214,7 +214,7 @@ const ContactForm = ({
       <div>
         <label
           htmlFor="email"
-          className="mt-1 mb-2 block text-xs font-medium text-black xl:text-sm dark:text-white"
+          className="mt-1 mb-2 block text-xs font-medium text-black sm:text-sm dark:text-white"
         >
           Email
         </label>
@@ -252,7 +252,7 @@ const ContactForm = ({
       <div>
         <label
           htmlFor="message"
-          className="mt-1 mb-2 block text-xs font-medium text-black xl:text-sm dark:text-white"
+          className="mt-1 mb-2 block text-xs font-medium text-black sm:text-sm dark:text-white"
         >
           Message
         </label>

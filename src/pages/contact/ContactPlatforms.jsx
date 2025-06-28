@@ -5,20 +5,19 @@ import github from "../../assets/icons/github.svg";
 
 const ContactPlatforms = () => {
   return (
-    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:flex-nowrap sm:gap-10">
+    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 xl:flex-nowrap sm:gap-10">
       <div
-        data-ao="fade-right"
-        data-ao-offset="500"
+        data-aos="fade-right"
         onClick={() =>
           window.open(
             "https://wa.me/918493912066?text=Hi%20there%2C%20I%20saw%20your%20portfolio!",
             "_blank",
           )
         }
-        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#2dea55]/50 px-6 py-3 sm:border-transparent sm:hover:border-[#2dea55]/50"
+        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#2dea55]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#2dea55]/50"
       >
         <img
-          className="w-9 grayscale-100 group-hover:grayscale-0 sm:w-10"
+          className="w-9 xl:grayscale-100 group-hover:grayscale-0 sm:w-10"
           src={whatsapp}
           alt="Whatsapp"
         />
@@ -28,13 +27,12 @@ const ContactPlatforms = () => {
       <a
         href="https://www.instagram.com/manhotra.31/"
         target="_blank"
-        data-ao="fade-right"
-        data-ao-offset="500"
-        data-ao-delay="100"
-        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#c3427b]/50 px-6 py-3 sm:border-transparent sm:hover:border-[#c3427b]/50"
+        data-aos="fade-right"
+        data-aos-delay="100"
+        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#c3427b]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#c3427b]/50"
       >
         <img
-          className="w-9 grayscale-100 group-hover:grayscale-0 sm:w-10"
+          className="w-9 xl:grayscale-100 group-hover:grayscale-0 sm:w-10"
           src={instagram}
           alt="Whatsapp"
         />
@@ -45,13 +43,12 @@ const ContactPlatforms = () => {
       <a
         href="https://www.linkedin.com/in/jatin-manhotra-5b474a347/"
         target="_blank"
-        data-ao="fade-right"
-        data-ao-offset="500"
-        data-ao-delay="200"
-        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#0078d4]/50 px-6 py-3 sm:border-transparent sm:hover:border-[#0078d4]/50"
+        data-aos="fade-right"
+        data-aos-delay="200"
+        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#0078d4]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#0078d4]/50"
       >
         <img
-          className="w-10 grayscale-100 group-hover:grayscale-0"
+          className="w-10 xl:grayscale-100 group-hover:grayscale-0"
           src={linkedin}
           alt="Whatsapp"
         />
@@ -61,13 +58,12 @@ const ContactPlatforms = () => {
       <a
         href="https://github.com/JatinManhotra"
         target="_blank"
-        data-ao="fade-right"
-        data-ao-offset="500"
-        data-ao-delay="300"
-        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#0078d4]/50 px-6 py-3 sm:border-transparent sm:hover:border-[#0078d4]/50"
+        data-aos="fade-right"
+        data-aos-delay="300"
+        className="group card-shadow card-border flex w-fit cursor-pointer items-center gap-6 rounded-lg border-[#0078d4]/50 px-6 py-3 xl:border-transparent xl:hover:border-[#0078d4]/50"
       >
         <img
-          className="w-10 grayscale-100 group-hover:grayscale-0"
+          className="w-10 xl:grayscale-100 group-hover:grayscale-0"
           src={github}
           alt="Whatsapp"
         />

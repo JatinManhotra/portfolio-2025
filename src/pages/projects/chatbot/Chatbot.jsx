@@ -32,7 +32,7 @@ const Chatbot = () => {
       <div
       title="Chat with Uta"
         onClick={handleToggle}
-        className="card-shadow fixed right-2 sm:right-10 bottom-20 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#ec979e]"
+        className="card-shadow fixed right-2 md:right-10 bottom-20 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#ec979e]"
       >
         {/* Image (Uta) */}
         <img
@@ -43,12 +43,12 @@ const Chatbot = () => {
 
         {/* X Icon */}
         <FaXmark
-          className={`absolute text-xl text-white transition-all duration-300 ${showChatbot ? "scale-100 rotate-0 opacity-100" : "scale-75 -rotate-12 opacity-0"} `}
+          className={`absolute text-xl text-black transition-all duration-300 ${showChatbot ? "scale-100 rotate-0 opacity-100" : "scale-75 -rotate-12 opacity-0"} `}
         />
       </div>
 
       <div
-        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed bottom-20 sm:right-20 sm:bottom-20 flex h-full max-h-140 w-90 sm:w-100 origin-bottom-right flex-col justify-between rounded-lg`}
+        className={` ${showChatbot ? "scale-100" : "scale-0"} soft-bg-gradient dark:dark-bg-gradient card-shadow card-border fixed right-0  bottom-20 sm:right-12 md:right-20 sm:bottom-20 flex h-full max-h-120 md:max-h-170 lg:max-h-140 w-80 sm:w-100 origin-bottom-right flex-col justify-between rounded-lg`}
       >
         {/* chatbot header */}
         <div className="flex items-center px-6 py-3 dark:border-b-0 border-b border-subtext-dark dark:bg-transparent bg-light-gray justify-between">
