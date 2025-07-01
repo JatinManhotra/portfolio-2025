@@ -12,9 +12,16 @@ A fully responsive and interactive portfolio website built using **React JS** an
 
 ## 📸 Screenshots
 
+### 🏠 Homepage  
 ![Homepage](./screenshots/Home.png)
+
+### 🤖 Uta - Chatbot  
 ![Uta](./screenshots/Uta.png)
+
+### 🧩 Projects Section  
 ![Projects Section](./screenshots/Projects.png)
+
+### 📬 Contact Me  
 ![Contact Section](./screenshots/Contact.png)
 
 ---
