@@ -130,13 +130,6 @@ const Home = () => {
             </button>
           </a>
 
-          {/* download resume */}
-          <a>
-            <button aria-label="Resume" className="gold-btn group custom-btn">
-              Resume
-            </button>
-          </a>
-
         </div>
       </div>
 
