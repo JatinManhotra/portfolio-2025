@@ -109,11 +109,11 @@ const Home = () => {
 
         {/* info about me */}
         <p className="subtext-color mt-4 text-justify sm:text-lg lg:mt-6">
-          I'm a web developer who really enjoys bringing ideas to reality. I
+          I'm a <strong className="main-text-color">web developer</strong> who really enjoys <strong className="main-text-color">bringing ideas to reality</strong>. I
           love to take this challenge, and there's no better feeling than
-          finally achieving it. I'm always learning new things , improving my
-          skills, and trying to get better day-by-day. Coding makes me happy,
-          and I'm excited to keep growing and creating more cool projects.
+          finally <strong className="main-text-color">achieving it</strong>. I'm always learning new things , improving my
+          skills, and trying to get better <strong className="main-text-color">day-by-day</strong>. Coding makes me <strong className="main-text-color">happy</strong>,
+          and I'm excited to keep growing and creating more <strong className="main-text-color">cool projects</strong>.
         </p>
 
         {/* redirecting buttons */}

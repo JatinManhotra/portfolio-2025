@@ -199,6 +199,17 @@ const Navbar = () => {
 
         <Link
           activeClass="active"
+          to="experience"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+        >
+          <li className="li-hover li-underline">Experience</li>
+        </Link>
+
+        <Link
+          activeClass="active"
           to="skills"
           spy={true}
           smooth={true}

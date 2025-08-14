@@ -11,6 +11,13 @@ import git from "../../assets/icons/git.svg";
 import firebase from "../../assets/icons/firebase.svg";
 import bootstrap from "../../assets/icons/bootstrap.svg";
 import github from "../../assets/icons/github.svg";
+import vite from "../../assets/icons/vite.svg";
+import npm from "../../assets/icons/npm.svg";
+import eye from "../../assets/icons/eye.svg";
+import code from "../../assets/icons/code.svg";
+import speedometer from "../../assets/icons/speedometer.svg";
+import browser from "../../assets/icons/browser.svg";
+import mobile from "../../assets/icons/mobile.svg";
 import IconBox from "./IconBox";
 
   // my skills data
@@ -89,6 +96,44 @@ const tools = [
     color: "#6693c1",
     text: "Github",
   },
+  {
+    icon: vite,
+    color: "#9b60ff",
+    text: "Vite",
+  },
+  {
+    icon: npm,
+    color: "#d50000",
+    text: "npm",
+  },
+];
+
+const performance = [
+  {
+    icon: eye,
+    color: "#ffd05b",
+    text: "Accessibility (ARIA)",
+  },
+  {
+    icon: code,
+    color: "#25b6d2",
+    text: "Semantic HTML",
+  },
+  {
+    icon: mobile,
+    color: "#87a3c4",
+    text: "Responsive Design",
+  },
+  {
+    icon: speedometer,
+    color: "#ffc10d",
+    text: "SPA Optimization",
+  },
+  {
+    icon: browser,
+    color: "#77b3d4",
+    text: "Cross-Browser Testing",
+  },
 ];
 
 const MySkills = () => {
@@ -109,13 +154,13 @@ const MySkills = () => {
         data-aos-offset="200"
         className="subtext-color mt-6 mb-10 text-center text-sm sm:text-lg lg:mb-20"
       >
-        Here are the technologies I am familiar with
+        Here are the <strong className="main-text-color">technologies</strong> I am familiar with
       </h3>
 
-      <div className="grid grid-cols-1 overflow-hidden py-5 lg:grid-cols-2">
+      <div className="grid grid-cols-1 overflow-hidden pb-5 sm:pb-8 lg:grid-cols-2">
 
         {/* languages component */}
-        <div data-aos="fade-right" data-aos-offset="200" className="mb-5">
+        <div data-aos="fade-right" data-aos-offset="200" className="mb-5 p-2">
           <h2 className="orange-text my-5 text-center sm:text-xl">Languages</h2>
           <div className="mb-5 flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
             {languages?.length > 0
@@ -136,7 +181,7 @@ const MySkills = () => {
           data-aos="fade-left"
           data-aos-offset="200"
           data-aos-delay="100"
-          className="mb-5"
+          className="mb-5 p-2"
         >
           <h2 className="orange-text my-5 text-center sm:text-xl">Libraries</h2>
           <div className="mb-5 flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
@@ -154,7 +199,7 @@ const MySkills = () => {
         </div>
 
         {/* framework component */}
-        <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="200">
+        <div className="mb-5 p-2" data-aos="fade-right" data-aos-offset="200" data-aos-delay="200">
           <h2 className="orange-text my-5 text-center sm:text-xl">
             Frameworks
           </h2>
@@ -173,11 +218,28 @@ const MySkills = () => {
         </div>
 
         {/* tools component */}
-        <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="300">
+        <div className="mb-5 p-2" data-aos="fade-left" data-aos-offset="200" data-aos-delay="300">
           <h2 className="orange-text my-5 text-center sm:text-xl">Tools</h2>
           <div className="flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
             {tools?.length > 0
               ? tools.map((item) => (
+                  <IconBox
+                    key={item.text}
+                    icon={item.icon}
+                    color={item.color}
+                    text={item.text}
+                  />
+                ))
+              : null}
+          </div>
+        </div>
+
+        {/* performance component */}
+        <div className="lg:col-span-2 p-2" data-aos="fade-up" data-aos-offset="200" data-aos-delay="300">
+          <h2 className="orange-text my-5 text-center sm:text-xl">Performance/UX</h2>
+          <div className="flex flex-wrap items-center justify-center gap-10 xl:flex-nowrap">
+            {performance?.length > 0
+              ? performance.map((item) => (
                   <IconBox
                     key={item.text}
                     icon={item.icon}

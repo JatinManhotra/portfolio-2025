@@ -15,13 +15,18 @@ import react_icons from "../../assets/icons/react-icons.svg";
 import react_router from "../../assets/icons/react-router.svg";
 import redux from "../../assets/icons/redux.svg";
 import css from "../../assets/icons/css.svg";
+import chakra_ui from "../../assets/icons/chakra-ui.svg";
 import moment from "../../assets/icons/moment.svg";
 import firebase from "../../assets/icons/firebase.svg";
 import leaflet from "../../assets/icons/leaflet.svg";
 import tailwind_css from "../../assets/icons/tailwind-css.svg";
+import apexcharts from "../../assets/icons/apexcharts.png";
+import expenseImg from "../../assets/projects/expense.png";
+import expenseVid from "../../assets/projects/Expense.mp4";
+import cryptoImg from "../../assets/projects/crypto.png";
+import cryptoVid from "../../assets/projects/crypto.mp4";
 
 export const projectData = [
-
   // portfolio
   {
     title: "My Portfolio",
@@ -292,65 +297,65 @@ export const projectData = [
   },
 
   // tic tac toe
-  {
-    title: "Tic Tac Toe",
-    description:
-      "A fully interactive and responsive Tic Tac Toe web app built using React. This project showcases both classic Player vs Player (PvP) mode and a smart Player vs Computer (PvC) mode with basic AI logic. It focuses on intuitive design, human-readable code, and clean gameplay logic - ideal for casual players.",
-    short_description:
-      "A fully interactive and responsive Tic Tac Toe web app built using React. This project showcases both PvP mode and a PvC mode with basic AI logic.",
-    live_demo: "https://jatinmanhotra.github.io/react-tic-tac-toe/",
-    github_page: "https://github.com/JatinManhotra/react-tic-tac-toe",
-    key_features: [
-      {
-        ul: "🎮 Two Game Modes",
-        li: "Player vs Player (PvP) and Player vs Computer (PvC).",
-      },
-      {
-        ul: "✅ Win Detection Logic",
-        li: "Highlights the winning combination visually.",
-      },
-      {
-        ul: "🏁 Game Status Updates",
-        li: "Real-time feedback on the current turn. Tracks and displays player scores across rounds. ",
-      },
-      {
-        ul: "🧠 Smart Computer AI",
-        li: "AI attempts to win if possible. If not, it blocks the player from winning.",
-      },
-      {
-        ul: "🔁 Game Reset Button",
-        li: "Resets the board while keeping scores intact.",
-      },
-      {
-        ul: "📱 Fully Responsive Design",
-        li: "Optimized layout and controls for mobile, tablet, and desktop. Uses media queries for smooth UI scaling.",
-      },
-      {
-        ul: "🎨 Custom Styling",
-        li: "Each player's symbol (X/O) has distinct colors. Winning squares get a highlight color.",
-      },
-    ],
-    technology_used: [
-      {
-        icon: react,
-        name: "React js",
-        color: "#61DAFB",
-      },
-      {
-        icon: css,
-        name: "CSS3",
-        color: "#1572B6",
-      },
-    ],
-    video: ticTacVid,
-    img: ticTac,
-    future_ideas: [
-      "❗Difficulty Levels: Add easy, medium, and hard AI difficulty.",
-      "🔉 Sound Effects: Add click and win sounds.",
-      "📦 Local Storage: Save scores and game mode across sessions.",
-      "🛜 Multiplayer Online Mode (with WebSockets or Firebase)",
-    ],
-  },
+  // {
+  //   title: "Tic Tac Toe",
+  //   description:
+  //     "A fully interactive and responsive Tic Tac Toe web app built using React. This project showcases both classic Player vs Player (PvP) mode and a smart Player vs Computer (PvC) mode with basic AI logic. It focuses on intuitive design, human-readable code, and clean gameplay logic - ideal for casual players.",
+  //   short_description:
+  //     "A fully interactive and responsive Tic Tac Toe web app built using React. This project showcases both PvP mode and a PvC mode with basic AI logic.",
+  //   live_demo: "https://jatinmanhotra.github.io/react-tic-tac-toe/",
+  //   github_page: "https://github.com/JatinManhotra/react-tic-tac-toe",
+  //   key_features: [
+  //     {
+  //       ul: "🎮 Two Game Modes",
+  //       li: "Player vs Player (PvP) and Player vs Computer (PvC).",
+  //     },
+  //     {
+  //       ul: "✅ Win Detection Logic",
+  //       li: "Highlights the winning combination visually.",
+  //     },
+  //     {
+  //       ul: "🏁 Game Status Updates",
+  //       li: "Real-time feedback on the current turn. Tracks and displays player scores across rounds. ",
+  //     },
+  //     {
+  //       ul: "🧠 Smart Computer AI",
+  //       li: "AI attempts to win if possible. If not, it blocks the player from winning.",
+  //     },
+  //     {
+  //       ul: "🔁 Game Reset Button",
+  //       li: "Resets the board while keeping scores intact.",
+  //     },
+  //     {
+  //       ul: "📱 Fully Responsive Design",
+  //       li: "Optimized layout and controls for mobile, tablet, and desktop. Uses media queries for smooth UI scaling.",
+  //     },
+  //     {
+  //       ul: "🎨 Custom Styling",
+  //       li: "Each player's symbol (X/O) has distinct colors. Winning squares get a highlight color.",
+  //     },
+  //   ],
+  //   technology_used: [
+  //     {
+  //       icon: react,
+  //       name: "React js",
+  //       color: "#61DAFB",
+  //     },
+  //     {
+  //       icon: css,
+  //       name: "CSS3",
+  //       color: "#1572B6",
+  //     },
+  //   ],
+  //   video: ticTacVid,
+  //   img: ticTac,
+  //   future_ideas: [
+  //     "❗Difficulty Levels: Add easy, medium, and hard AI difficulty.",
+  //     "🔉 Sound Effects: Add click and win sounds.",
+  //     "📦 Local Storage: Save scores and game mode across sessions.",
+  //     "🛜 Multiplayer Online Mode (with WebSockets or Firebase)",
+  //   ],
+  // },
 
   // century AI
   {
@@ -446,37 +451,103 @@ export const projectData = [
     ],
   },
 
-  // uta AI
+  // // uta AI
+  // {
+  //   title: "Uta - Chatbot",
+  //   description:
+  //     "A responsive AI chatbot built with React and the Gemini API, designed to provide real-time interactions in a clean interface. Uta supports dynamic conversations using state management, features a toggle able chat icon with animated transitions, and includes dark mode compatibility. Built with modular React components and state logic for toggling, animation, and rendering AI responses in real-time.",
+  //   short_description:
+  //     "A responsive AI chatbot built with React and the Gemini API, designed to provide real-time interactions in a clean interface.",
+  //   key_features: [
+  //     {
+  //       ul: "🎤 Real-time AI Responses",
+  //       li: "Uta responds to user prompts instantly, mimicking natural conversation flow. Remembers the last conversation and responds accordingly to it.",
+  //     },
+  //     {
+  //       ul: "⚛️ React-Powered Interface",
+  //       li: "Clean component structure using React and state management for toggling the chat window, animations, and conditional rendering.",
+  //     },
+  //     {
+  //       ul: "🎭 Toggleable Animated Icon",
+  //       li: "A minimal chatbot icon (Uta) that transforms into a close (❌) button with subtle rotation animations on click.",
+  //     },
+  //     {
+  //       ul: "🌙 Dark Mode Support",
+  //       li: "Seamlessly adapts to dark/light themes for a consistent user experience across devices.",
+  //     },
+  //     {
+  //       ul: "📱 Responsive Design",
+  //       li: "Mobile-first and desktop-friendly layout ensures Uta works smoothly across screen sizes.",
+  //     },
+  //     {
+  //       ul: "🧠 Stateless Mode ",
+  //       li: "Optionally designed to not save chat history, refreshing the page resets the conversation.",
+  //     },
+  //   ],
+  //   technology_used: [
+  //     {
+  //       icon: react,
+  //       name: "React js",
+  //       color: "#61DAFB",
+  //     },
+  //     {
+  //       icon: react_icons,
+  //       name: "React Icons",
+  //       color: "#e91e63",
+  //     },
+  //     {
+  //       icon: tailwind_css,
+  //       name: "Tailwind CSS",
+  //       color: "#06B6D4",
+  //     },
+  //   ],
+  //   api_used: [
+  //     {
+  //       name: "Gemini API",
+  //       link: "https://ai.google.dev/gemini-api/docs",
+  //       text: "Used to generate AI responses based on user prompts. Model: gemini-2.0-flash",
+  //     },
+  //   ],
+  //   video: utaVid,
+  //   img: uta,
+  //   future_ideas: [
+  //     "🎨 Customizable Avatar & Themes",
+  //     "🎙️ Voice input/output",
+  //     "📤 Export Chat Option",
+  //   ],
+  // },
+];
+
+export const proBonoData = [
+  // expense tracker
   {
-    title: "Uta - Chatbot",
+    title: "Expense Tracker",
     description:
-      "A responsive AI chatbot built with React and the Gemini API, designed to provide real-time interactions in a clean interface. Uta supports dynamic conversations using state management, features a toggle able chat icon with animated transitions, and includes dark mode compatibility. Built with modular React components and state logic for toggling, animation, and rendering AI responses in real-time.",
+      "A responsive and intuitive expense tracking application built with React, Chakra UI, and React ApexCharts. Designed to help users log, categorize, and visualize their spending habits, it features an interactive chart for analyzing expenses in real time. The app is structured with modular components and optimized for mobile and desktop devices, demonstrating strong UI design and state management skills.",
     short_description:
-      "A responsive AI chatbot built with React and the Gemini API, designed to provide real-time interactions in a clean interface.",
+      "A responsive expense tracking application built with React, Chakra UI, and React ApexCharts. Designed to help users log, categorize, and visualize their expenses in an intuitive interface.",
+    live_demo: "https://jatinmanhotra.github.io/expense-tracker/",
+    github_page: "https://github.com/JatinManhotra/expense-tracker",
     key_features: [
       {
-        ul: "🎤 Real-time AI Responses",
-        li: "Uta responds to user prompts instantly, mimicking natural conversation flow. Remembers the last conversation and responds accordingly to it.",
+        ul: "📊 Interactive Expense Visualization",
+        li: "Real-time charts powered by React ApexCharts to display spending trends by category or date.",
       },
       {
         ul: "⚛️ React-Powered Interface",
-        li: "Clean component structure using React and state management for toggling the chat window, animations, and conditional rendering.",
+        li: "Modular React components for expense list, input forms, and chart rendering with smooth state updates.",
       },
       {
-        ul: "🎭 Toggleable Animated Icon",
-        li: "A minimal chatbot icon (Uta) that transforms into a close (❌) button with subtle rotation animations on click.",
+        ul: "🎨 Chakra UI Styling",
+        li: "Fully responsive, accessible, and themable design using Chakra UI's component library and color modes.",
       },
       {
-        ul: "🌙 Dark Mode Support",
-        li: "Seamlessly adapts to dark/light themes for a consistent user experience across devices.",
+        ul: "➕ Add & Manage Expenses",
+        li: "Users can quickly add new expenses, categorize them, and remove entries with instant updates.",
       },
       {
-        ul: "📱 Responsive Design",
-        li: "Mobile-first and desktop-friendly layout ensures Uta works smoothly across screen sizes.",
-      },
-      {
-        ul: "🧠 Stateless Mode ",
-        li: "Optionally designed to not save chat history, refreshing the page resets the conversation.",
+        ul: "📱 Mobile-First Responsive Design",
+        li: "Optimized for both desktop and mobile views to ensure usability on all devices.",
       },
     ],
     technology_used: [
@@ -486,29 +557,137 @@ export const projectData = [
         color: "#61DAFB",
       },
       {
-        icon: react_icons,
-        name: "React Icons",
-        color: "#e91e63",
+        icon: chakra_ui,
+        name: "Chakra UI",
+        color: "#319795",
       },
       {
-        icon: tailwind_css,
-        name: "Tailwind CSS",
-        color: "#06B6D4",
+        icon: apexcharts,
+        name: "React ApexCharts",
+        color: "#3096f3",
       },
     ],
-    api_used: [
-      {
-        name: "Gemini API",
-        link: "https://ai.google.dev/gemini-api/docs",
-        text: "Used to generate AI responses based on user prompts. Model: gemini-2.0-flash",
-      },
-    ],
-    video: utaVid,
-    img: uta,
+    video: expenseVid,
+    img: expenseImg,
     future_ideas: [
-      "🎨 Customizable Avatar & Themes",
-      "🎙️ Voice input/output",
-      "📤 Export Chat Option",
+      "💾 Local storage or cloud sync for persistent expense history",
+      "📂 Export expenses to CSV or PDF",
+      "🔍 Advanced filtering and search by date range or category",
     ],
   },
+
+  // crypto dashboard UI
+  {
+    title: "Crypto Dashboard UI",
+    description:
+      "A modern cryptocurrency dashboard interface showcasing a professional, component-based design built with React and Chakra UI. It features sections for market trends, coin details, and portfolio stats, arranged in a clean, responsive grid layout. While currently UI-only without live data, it serves as a solid foundation for integrating real-time APIs and interactive charts in future versions.",
+    short_description:
+      "A sleek and modern cryptocurrency dashboard interface built with React and Chakra UI. Designed for tracking market trends, portfolio distribution, and price changes.",
+    live_demo: "https://jatinmanhotra.github.io/crypto-dashboard/",
+    github_page: "https://github.com/JatinManhotra/crypto-dashboard",
+    key_features: [
+      {
+        ul: "📊 Dashboard Layout",
+        li: "Organized sections for market overview, coin details, and portfolio stats in a grid-based design.",
+      },
+      {
+        ul: "🎨 Chakra UI Styling",
+        li: "Clean, accessible, and responsive design powered by Chakra UI's theming and prebuilt components.",
+      },
+      {
+        ul: "📱 Mobile-First Responsive Design",
+        li: "Optimized for mobile, tablet, and desktop with consistent styling.",
+      },
+      {
+        ul: "💡 Easily Extensible",
+        li: "Designed as a scalable template for integrating APIs or adding interactive features.",
+      },
+      {
+        ul: "🌙 Dark/Light Mode Support",
+        li: "UI adapts seamlessly to both dark and light themes for user preference.",
+      },
+    ],
+    technology_used: [
+      {
+        icon: react,
+        name: "React js",
+        color: "#61DAFB",
+      },
+      {
+        icon: chakra_ui,
+        name: "Chakra UI",
+        color: "#319795",
+      },
+    ],
+    api_used: [],
+    video: cryptoVid,
+    img: cryptoImg,
+    future_ideas: [
+      "🔗 Live cryptocurrency price API integration",
+      "📈 Interactive charts for price and market trends",
+      "📤 Exportable portfolio reports",
+    ],
+  },
+  // AI Chatbot
+  {
+  title: "AI Chatbot",
+  description:
+    "An interactive AI chatbot originally developed for a local business and later adapted into my personal portfolio. Built with React and integrated with Gemini API, the chatbot offers real-time responses in a clean, responsive interface. Designed with modular components, toggleable UI, and dark mode support, it demonstrates my ability to create functional and engaging conversational UIs from scratch and integrate them seamlessly into existing web projects.",
+  short_description:
+    "An interactive AI chatbot originally developed for a local business and later adapted into my personal portfolio. Built with React and integrated with Gemini API.",
+    github_page: "https://github.com/JatinManhotra/portfolio-2025/tree/main/src/pages/projects/chatbot",
+  key_features: [
+    {
+      ul: "💬 Real-time AI Responses",
+      li: "Generates instant, context-aware replies to user queries for a natural chat experience.",
+    },
+    {
+      ul: "⚛️ Modular React Components",
+      li: "Structured with reusable React components for easy maintenance and future scaling.",
+    },
+    {
+      ul: "🎭 Toggleable Chat Window",
+      li: "Opens and closes with smooth animations for a polished user experience.",
+    },
+    {
+      ul: "🌙 Dark Mode Support",
+      li: "Switches seamlessly between light and dark themes to match the website's appearance.",
+    },
+    {
+      ul: "📱 Fully Responsive",
+      li: "Works smoothly across desktop and mobile devices.",
+    },
+  ],
+  technology_used: [
+    {
+      icon: react,
+      name: "React js",
+      color: "#61DAFB",
+    },
+    {
+      icon: react_icons,
+      name: "React Icons",
+      color: "#e91e63",
+    },
+    {
+      icon: tailwind_css,
+      name: "Tailwind CSS",
+      color: "#06B6D4",
+    },
+  ],
+  api_used: [
+    {
+      name: "Gemini API",
+      link: "https://ai.google.dev/gemini-api/docs",
+      text: "Used to generate AI-powered responses to user input.",
+    },
+  ],
+  video: utaVid,
+  img: uta,
+  future_ideas: [
+    "🎨 Custom business branding and theming",
+    "📊 Analytics dashboard to monitor chatbot usage",
+    "🎙️ Voice-enabled interaction",
+  ],
+}
 ];

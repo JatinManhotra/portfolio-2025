@@ -16,7 +16,7 @@ const ContactMe = () => {
         data-aos="fade-up"
         className="text-center text-3xl font-bold sm:text-4xl"
       >
-        Contact <span className="gold-text">Me</span>
+        Contact <span className="gold-text li-underline">Me</span>
       </h1>
 
       {/* small heading */}
@@ -25,7 +25,7 @@ const ContactMe = () => {
         className="subtext-color mt-6 mb-5 text-center text-sm sm:text-lg"
       >
         If you want to know more about me, or if you would just like to say
-        hello, send me a message. I'd love to hear from you.
+        hello, <strong className="main-text-color">send me a message</strong>. I'd love to hear from you.
       </h3>
 
       <div className="mx-auto mt-20 lg:max-w-[95%] xl:max-w-[90%]">
@@ -40,7 +40,7 @@ const ContactMe = () => {
             data-aos-delay="100"
             className="subtext-color mt-2 text-sm sm:text-lg"
           >
-            You can reach me on these platforms.
+            You can reach me on these <strong className="main-text-color">platforms</strong>.
           </h3>
 
           <ContactPlatforms />
@@ -63,7 +63,7 @@ const ContactMe = () => {
           data-aos="fade-right"
           className="subtext-color mt-10 text-sm sm:text-lg"
         >
-          Send me a email
+          Send me a <strong className="main-text-color">email</strong> 
         </h3>
 
         {/* component with a illustration and a contact me form */}

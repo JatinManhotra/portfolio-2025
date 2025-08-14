@@ -7,6 +7,11 @@ const MyContextProvider = ({ children }) => {
   const [dark, setDark] = useState(true); // sets dark mode
   const [fact, setFact] = useState(""); // stores the fetched fact
   const [factLoading, setFactLoading] = useState(false); // loading state when fact is being fetched 
+  const [showProjects, setShowProjects] = useState({
+    personal : true,
+    pro_bono : false
+  }); // toggles between my personal projects and pro bono projects
+  const [isSmall, setIsSmall] = useState(false); // sets on devices less than 1024 width
 
   // function to fetch random facts
   async function fetchFacts() {
@@ -31,6 +36,68 @@ const MyContextProvider = ({ children }) => {
       setFactLoading(false);
     }
   }
+
+  // creates chunks for projects
+
+  const chunkProjects = (arr, size) => {
+  const chunks = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+
+  if (size === 1) {
+    // On small screens, always make view-all its own chunk
+    chunks.push(["view-all"]);
+  } else {
+    // Large screens
+    const lastChunk = chunks[chunks.length - 1];
+    if (lastChunk.length === 1) {
+      lastChunk.push("view-all");
+    } else {
+      chunks.push(["view-all"]);
+    }
+  }
+
+  return chunks;
+};
+
+   // next button
+  function handleNext(ref, page, setPage, groupedProjects) {
+    const container = ref.current;
+    const groupWidth = container.offsetWidth; // scroll ref container's full width
+
+    const next = page + 1;
+    const max = groupedProjects.length - 1;
+
+    const targetPage = next > max ? 0 : next; // shifts to first page after the end
+    container.scrollTo({ left: groupWidth * targetPage, behavior: "smooth" }); // scrolls the container on each click
+    setPage(targetPage);
+  }
+
+   // previous button
+  function handlePrev(ref, page, setPage, groupedProjects) {
+    const container = ref.current;
+    const groupWidth = container.offsetWidth;
+
+    const prev = page - 1;
+    const max = groupedProjects.length - 1;
+
+    const targetPage = prev < 0 ? max : prev; // shifts to last page after clicking on the previous button on first page
+    container.scrollTo({ left: groupWidth * targetPage, behavior: "smooth" });
+    setPage(targetPage);
+  }
+
+   // checks for screens < 1024 on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmall(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // sets color theme on page reload
   useEffect(() => {
@@ -79,7 +146,7 @@ const MyContextProvider = ({ children }) => {
 
   return (
     <MyContext.Provider
-      value={{ dark, setDark, fact, setFact, fetchFacts, factLoading }}
+      value={{ dark, setDark, fact, setFact, fetchFacts, factLoading, showProjects, setShowProjects, isSmall, setIsSmall, chunkProjects, handleNext, handlePrev }}
     >
       {children}
     </MyContext.Provider>

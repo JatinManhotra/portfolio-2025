@@ -8,12 +8,18 @@ import MyProjects from "../pages/projects/MyProjects";
 import MySkills from "../pages/skills/MySkills";
 import ContactMe from "../pages/contact/ContactMe";
 import { FaHeart } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Clock from "../components/Clock";
 import Chatbot from "../pages/projects/chatbot/Chatbot";
+import Experience from "./experience/Experience";
+import SelectProjects from "./projects/SelectProjects";
+import { MyContext } from "../context/MyContext";
+import ProBonoProjects from "./projects/ProBonoProjects";
 
 const Homepage = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  const {showProjects} = useContext(MyContext)
 
   function handleScrollPercentage() { 
 
@@ -57,8 +63,12 @@ const Homepage = () => {
           <Home />
           <RandomFacts />
           <AboutMe />
+          <Experience/>
           <MySkills />
-          <MyProjects />
+          <SelectProjects/>
+          {
+            showProjects.personal ? <MyProjects /> : <ProBonoProjects/>
+          }          
           <ContactMe />
         </section>
 

@@ -5,7 +5,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { useEffect } from "react";
 import TechAndFeatures from "./TechandFeatures";
 import TechApiIdeas from "./TechApiIdeas";
-import { projectData } from "../data";
+import { projectData, proBonoData } from "../data";
 import Clock from "../../../components/Clock";
 import Chatbot from "../chatbot/Chatbot";
 
@@ -14,7 +14,9 @@ const ProjectDetails = () => {
   const { projectName } = useParams(); // gets project name from the url
   const navigate = useNavigate();
 
-  const project = projectData.find( // does project exists?
+  const allProjects = [...projectData, ...proBonoData]
+
+  const project = allProjects.find( // does project exists?
     (p) => p.title.toLowerCase() === projectName.toLowerCase(),
   );
 
