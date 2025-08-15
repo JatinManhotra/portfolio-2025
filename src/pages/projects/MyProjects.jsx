@@ -12,7 +12,7 @@ const MyProjects = () => {
      const [page, setPage] = useState(0);
      const scrollRef = useRef();
    
-     const groupedProjects = chunkProjects(projectData, isSmall ? 1 : 2);
+     const groupedProjects = chunkProjects(projectData, isSmall ? 1 : 2, true);
    
      // updates the page data when scrolled on mobile devices
      useEffect(() => {

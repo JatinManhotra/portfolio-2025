@@ -15,6 +15,7 @@ import Experience from "./experience/Experience";
 import SelectProjects from "./projects/SelectProjects";
 import { MyContext } from "../context/MyContext";
 import ProBonoProjects from "./projects/ProBonoProjects";
+import Certification from "./certifications/Certification";
 
 const Homepage = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -68,7 +69,8 @@ const Homepage = () => {
           <SelectProjects/>
           {
             showProjects.personal ? <MyProjects /> : <ProBonoProjects/>
-          }          
+          }
+          <Certification/>       
           <ContactMe />
         </section>
 

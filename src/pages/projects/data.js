@@ -115,7 +115,7 @@ export const projectData = [
 
   // weather dashboard
   {
-    title: "Weather Dashboard",
+    title: "Weather31 - Weather Dashboard",
     description:
       "A responsive React-based weather dashboard that lets users search any city and view real-time weather, 3-day and hourly forecasts, and interact with a Leaflet map displaying saved locations. Features include dark mode, persistent storage via localStorage, and smooth client-side routing using React Router.",
     short_description:
@@ -359,7 +359,7 @@ export const projectData = [
 
   // century AI
   {
-    title: "Century AI",
+    title: "Century AI - AI Chat App",
     description:
       "A responsive AI chat app built with React, Firebase, and the Gemini API, enabling users to interact with an AI assistant in real-time. Features include chat history with rename/delete options, authentication via Firebase, dark mode with per-user preferences, and persistent storage of conversations. The app supports deep linking to specific chats, real-time UI updates, and client-side routing with React Router.",
     short_description:

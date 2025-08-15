@@ -39,27 +39,38 @@ const MyContextProvider = ({ children }) => {
 
   // creates chunks for projects
 
-  const chunkProjects = (arr, size) => {
+  const chunkProjects = (arr, size, includeViewAll = false) => {
   const chunks = [];
-  for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size));
+
+  // Copy array so we don't mutate the original
+  const data = [...arr];
+
+  if (includeViewAll) {
+    // If last chunk would be 1 item, put "view-all" with it
+    if ((data.length % size) === 1 && size > 1) {
+      data.push("view-all");
+    } else {
+      data.push("view-all");
+    }
   }
 
-  if (size === 1) {
-    // On small screens, always make view-all its own chunk
-    chunks.push(["view-all"]);
-  } else {
-    // Large screens
+  // Create chunks
+  for (let i = 0; i < data.length; i += size) {
+    chunks.push(data.slice(i, i + size));
+  }
+
+  // Special case for small screens (size === 1):
+  // Ensure "view-all" is always alone in its chunk
+  if (includeViewAll && size === 1) {
     const lastChunk = chunks[chunks.length - 1];
-    if (lastChunk.length === 1) {
-      lastChunk.push("view-all");
-    } else {
+    if (lastChunk.length > 1 && lastChunk.includes("view-all")) {
       chunks.push(["view-all"]);
     }
   }
 
   return chunks;
 };
+
 
    // next button
   function handleNext(ref, page, setPage, groupedProjects) {

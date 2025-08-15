@@ -8,6 +8,8 @@ import { IoMoon, IoPerson } from "react-icons/io5";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { GoSun } from "react-icons/go";
 import { TbSunMoon } from "react-icons/tb";
+import { MdOutlineWorkOutline } from "react-icons/md";
+import { GrCertificate } from "react-icons/gr";
 
 const Navbar = () => {
 
@@ -84,6 +86,24 @@ const Navbar = () => {
           <Link
             className="w-full rounded-lg"
             activeClass="sm-active"
+            to="experience"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="Experience"
+              className="sm-menu-item"
+            >
+              <MdOutlineWorkOutline  className="text-lg" /> Experience
+            </button>
+          </Link>
+
+          <Link
+            className="w-full rounded-lg"
+            activeClass="sm-active"
             to="skills"
             spy={true}
             smooth={true}
@@ -114,6 +134,24 @@ const Navbar = () => {
               className="sm-menu-item"
             >
               <FaCode className="text-lg" /> Projects
+            </button>
+          </Link>
+
+          <Link
+            className="w-full rounded-lg"
+            activeClass="sm-active"
+            to="certifications"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+          >
+            <button
+              onClick={() => setShowMenu(false)}
+              aria-label="Certifications"
+              className="sm-menu-item"
+            >
+              <GrCertificate  className="text-lg" /> Certifications
             </button>
           </Link>
 
@@ -228,6 +266,17 @@ const Navbar = () => {
           duration={500}
         >
           <li className="li-hover li-underline">Projects</li>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="certifications"
+          spy={true}
+          smooth={true}
+          offset={-100}
+          duration={500}
+        >
+          <li className="li-hover li-underline">Certifications</li>
         </Link>
       </ul>
 
