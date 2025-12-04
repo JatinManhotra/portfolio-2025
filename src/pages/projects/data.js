@@ -24,9 +24,9 @@ import apexcharts from "../../assets/icons/apexcharts.png";
 import expenseImg from "../../assets/projects/expense.png";
 import expenseVid from "../../assets/projects/Expense.mp4";
 import cryptoImg from "../../assets/projects/crypto.png";
-import cryptoVid from "../../assets/projects/crypto.mp4";
+import cryptoVid from "../../assets/projects/Crypto.mp4";
 
-export const projectData = [
+export const projectData = [ 
   // portfolio
   {
     title: "My Portfolio",
