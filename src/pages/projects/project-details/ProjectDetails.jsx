@@ -3,7 +3,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { useEffect } from "react";
-import TechAndFeatures from "./TechandFeatures";
+import TechAndFeatures from "./TechAndFeatures";
 import TechApiIdeas from "./TechApiIdeas";
 import { projectData, proBonoData } from "../data";
 import Clock from "../../../components/Clock";
