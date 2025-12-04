@@ -39,7 +39,7 @@ const Experience = () => {
             data-aos-delay="100"
             className="mb-6 text-base lg:text-lg"
           >
-            ( <span className="italic"> Jun 2024 - Present </span> )
+            ( <span className="italic"> Jun 2024 - February 2025 </span> )
           </h4>
 
           {/* each paragraph appears after 100ms delay */}

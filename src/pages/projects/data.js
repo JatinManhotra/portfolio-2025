@@ -107,7 +107,7 @@ export const projectData = [
     img: portfolio,
     future_ideas: [
       "🗂️ Add project filtering by category or tech stack.",
-      "🎖️ Add Achievements, Certificates, and Client projects sections.",
+      "🎖️ Add Achievements, and Client projects sections.",
       "📽️ Use Framer Motion for smoother, React-native animations.",
       "👤 Improve accessibility.",
     ],
@@ -571,7 +571,7 @@ export const proBonoData = [
     img: expenseImg,
     future_ideas: [
       "💾 Local storage or cloud sync for persistent expense history",
-      "📂 Export expenses to CSV or PDF",
+      "📂  Export expenses to CSV or PDF",
       "🔍 Advanced filtering and search by date range or category",
     ],
   },
