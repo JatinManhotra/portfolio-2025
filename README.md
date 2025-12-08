@@ -6,7 +6,7 @@ A fully responsive and interactive portfolio website built using **React JS** an
 
 ## 🚀 Live Demo
 
-👉 Check out here - [Portfolio](https://jatinmanhotra.github.io/portfolio-2025)
+👉 Check out here - [Portfolio](https://portfolio-2025-ten-woad.vercel.app/)
 
 ---
 
